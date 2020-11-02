@@ -502,7 +502,10 @@ function odmianaMinuty(minNum){
     if (minNum === 1){
         return `minutę`;
     }
-    else if (minNum < 5){
+    else if (minNum % 100 > 10 && minNum % 100 < 15){
+        return `${minNum} minut`;
+    }
+    else if (minNum % 10 > 1 && minNum % 10 < 5){
         return `${minNum} minuty`;
     }
     else{
