@@ -1,0 +1,37 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<style>
+        #lightning{
+        animation:  lightning 1.5s linear infinite normal,
+                    move 4.5s linear infinite normal;
+    }
+
+    @keyframes lightning{
+        0%{opacity: 0}
+        1%{opacity: 1}
+        12%{opacity: 1}
+        13%{opacity: .3}
+        24%{opacity: .3}
+        25%{opacity: 1}
+        39%{opacity: 1}
+        73%{opacity: 0}
+        100%{opacity: 0}
+    }
+    @keyframes move{
+        0%{transform: translateX(0)}
+        32%{transform: translateX(0)}
+        33%{transform: translateX(-48px)}
+        65%{transform: translateX(-48px)}
+        66%{transform: translateX(48px)}
+        99%{transform: translateX(48px)}
+        100%{transform: translateX(0)}
+    }
+</style>
+
+<g id="11d">
+<g id="lightning">
+<path d="M116 64V256L188 64H116Z" fill="#E1B000"/>
+<path d="M68 128V0H164L116 128H68Z" fill="#E1B000"/>
+</g>
+</g>
+</svg>

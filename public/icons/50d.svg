@@ -1,0 +1,59 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<style>
+    #line2{
+        animation: move2 2.3s ease-in-out infinite alternate;
+    }
+    #line3{
+        animation: move3 4.5s ease-in-out infinite alternate;
+    }
+    #line4{
+        animation: move4 3.8s ease-in-out infinite alternate;
+    }
+    #line5{
+        animation: move5 5.4s ease-in-out infinite alternate;
+    }
+    
+
+    @keyframes move2{
+        from{
+            transform: translateX(0);
+        }
+        to{
+            transform: translateX(.5rem);
+        }
+    }
+    @keyframes move3{
+        from{
+            transform: translateX(0);
+        }
+        to{
+            transform: translateX(-.5rem);
+        }
+    }
+    @keyframes move4{
+        from{
+            transform: translateX(-.5rem);
+        }
+        to{
+            transform: translateX(0);
+        }
+    }
+    @keyframes move5{
+        from{
+            transform: translateX(0);
+        }
+        to{
+            transform: translateX(-.5rem);
+        }
+    }
+</style>
+
+<g id="50d">
+<path id="line1" d="M32 192H224" stroke="#E6E6E6" stroke-width="16" stroke-linecap="square"/>
+<path id="line2" d="M75 160L210 160" stroke="#CCCCCC" stroke-width="16" stroke-linecap="square"/>
+<path id="line3" d="M46 128L203 128" stroke="#D9D9D9" stroke-width="16" stroke-linecap="square"/>
+<path id="line4" d="M96 96L216 96" stroke="#BFBFBF" stroke-width="16" stroke-linecap="square"/>
+<path id="line5" d="M64 64L192 64" stroke="#CCCCCC" stroke-width="16" stroke-linecap="square"/>
+</g>
+</svg>

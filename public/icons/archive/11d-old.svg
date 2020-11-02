@@ -1,0 +1,109 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<style>
+    #rain{
+        animation: rain .6s linear infinite normal;
+    }
+
+    #first1{
+        transform-origin: 104px bottom;
+    }
+    #first2{
+        transform-origin: 8px bottom;
+    }
+    #first3{
+        transform-origin: 200px bottom;
+    }
+    #first1, #first2, #first3{
+        animation: water .6s linear infinite normal;
+    }
+    #second1{
+        transform-origin: 152px bottom;
+    }
+    #second2{
+        transform-origin: 248px bottom;
+    }
+    #second3{
+        transform-origin: 56px bottom;
+    }
+    #second1, #second2, #second3{
+        animation: water .6s linear .3s infinite normal;
+    }
+    #lightning{
+        animation:  lightning 1.5s linear infinite normal,
+                    move 6s linear infinite normal;
+    }
+
+    @keyframes rain{
+        from{
+            transform: translateY(0);
+        }
+        to{
+            transform: translateY(128px);
+        }
+    }
+    @keyframes water{
+        0%{transform: scale(.5, .5);}
+        5%{transform: scale(1, 1); opacity: 1}
+        40%{transform: scale(6, 0); opacity: 0}
+        100%{transform: scale(0, 0)}
+    }
+    @keyframes lightning{
+        0%{opacity: 0}
+        1%{opacity: 1}
+        9%{opacity: 1}
+        10%{opacity: .3}
+        18%{opacity: .3}
+        19%{opacity: 1}
+        29%{opacity: 1}
+        55%{opacity: 0}
+        100%{opacity: 0}
+    }
+    @keyframes move{
+        0%{transform: translateX(0)}
+        24%{transform: translateX(0)}
+        25%{transform: translateX(-48px)}
+        49%{transform: translateX(-48px)}
+        50%{transform: translateX(48px)}
+        74%{transform: translateX(48px)}
+        75%{transform: translateX(-96px)}
+        99%{transform: translateX(-96px)}
+        100%{transform: translateX(0)}
+    }
+</style>
+
+<g id="11d" clip-path="url(#clip0)">
+<g id="rain">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M144 64V0H160V64H144Z" fill="#41DAEF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M144 -64V-128L160 -128V-64H144Z" fill="#41DAEF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M144 192V128H160V192H144Z" fill="#41DAEF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M96 128L96 64H112L112 128H96Z" fill="#41DAEF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M96 0L96 -64H112L112 0H96Z" fill="#41DAEF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M96 256V192H112V256H96Z" fill="#41DAEF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M48 64V0H64V64H48Z" fill="#41DAEF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M48 -64V-128L64 -128V-64H48Z" fill="#41DAEF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M48 192V128H64V192H48Z" fill="#41DAEF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1.90735e-06 128L4.70488e-06 64H16L16 128H1.90735e-06Z" fill="#41DAEF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1.90735e-06 0L4.70488e-06 -64H16L16 0H1.90735e-06Z" fill="#41DAEF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 256L2.79753e-06 192H16L16 256H0Z" fill="#41DAEF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M240 64V0H256V64H240Z" fill="#41DAEF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M240 -64V-128L256 -128V-64H240Z" fill="#41DAEF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M240 192V128H256V192H240Z" fill="#41DAEF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M192 128V64H208V128H192Z" fill="#41DAEF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M192 0V-64H208V0H192Z" fill="#41DAEF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M192 256V192H208V256H192Z" fill="#41DAEF"/>
+</g>
+<rect id="first1" x="96" y="240" width="16" height="16" fill="#41DAEF"/>
+<rect id="first3" x="192" y="240" width="16" height="16" fill="#41DAEF"/>
+<rect id="second1" x="144" y="240" width="16" height="16" fill="#41DAEF"/>
+<rect id="second2" x="240" y="240" width="16" height="16" fill="#41DAEF"/>
+<rect id="second3" x="48" y="240" width="16" height="16" fill="#41DAEF"/>
+<rect id="first2" y="240" width="16" height="16" fill="#41DAEF"/>
+<path id="lightning" d="M120 128V0H152V64H184L160 256H152V128H120Z" fill="#E1B000"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="256" height="256" fill="white"/>
+</clipPath>
+</defs>
+</svg>

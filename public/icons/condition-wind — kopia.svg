@@ -1,0 +1,66 @@
+<svg width="66" height="52" viewBox="0 0 66 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<style>
+    #wind1{
+        stroke-dasharray: 63.39546585083008;
+        animation: dash1 3s ease-out infinite;
+    }
+    #wind2{
+        stroke-dasharray: 87.39546203613281;
+        animation: dash2 3s ease-out infinite;
+    }
+    #wind3{
+        stroke-dasharray: 75.39546203613281;
+        animation: dash3 3s ease-out infinite;
+    }
+
+    @keyframes dash1{
+        0%{
+            stroke-dashoffset: -63.39546585083008;
+        }
+        48%{
+            stroke-dashoffset: 0;
+        }
+        88%{
+            stroke-dashoffset: 63.39546585083008;
+        }
+        100%{
+            stroke-dashoffset: 63.39546585083008;
+        }
+    }
+    @keyframes dash2{
+        0%{
+            stroke-dashoffset: -87.39546203613281;
+        }
+        50%{
+            stroke-dashoffset: 0;
+        }
+        98%{
+            stroke-dashoffset: 87.39546203613281;
+        }
+        100%{
+            stroke-dashoffset: 87.39546203613281;
+        }
+    }
+    @keyframes dash3{
+        0%{
+            stroke-dashoffset: -75.39546203613281;
+        }
+        52%{
+            stroke-dashoffset: 0;
+        }
+        93%{
+            stroke-dashoffset: 75.39546203613281;
+        }
+        100%{
+            stroke-dashoffset: 75.39546203613281;
+        }
+    }
+</style>
+
+<g id="winds">
+<path id="wind1" d="M26.3673 4.36735C27.8367 2.89796 29.8776 2 32 2C36.4082 2 40 5.59184 40 10C40 14.4082 36.4082 18 32 18H0" stroke="white" stroke-opacity=".85" stroke-width="4"/>
+<path id="wind2" d="M50.3673 12.3673C51.8367 10.898 53.8776 10 56 10C60.4082 10 64 13.5918 64 18C64 22.4082 60.4082 26 56 26H0" stroke="white" stroke-opacity=".85" stroke-width="4"/>
+<path id="wind3" d="M38.3673 47.6327C39.8367 49.102 41.8776 50 44 50C48.4082 50 52 46.4082 52 42C52 37.5918 48.4082 34 44 34H0" stroke="white" stroke-opacity=".85" stroke-width="4"/>
+</g>
+</svg>

@@ -4,13 +4,175 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Piękna Pogoda</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=no'>
+
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;0,900;1,200;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
     <script defer src='script.js'></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiOsIOiXCCx_9hQ0_WZgQaUNoctzkCHSM&libraries=places&callback=initMap"></script>
 </head>
 <body>
-    <button id="button">Kliknij mnie proszę.</button>
+    <header>
+        <a href="javascript:window.location.reload();"><div id="logo"><img src="logo2.svg" height="100%" alt="logo Pięknej Pogody"></div></a>
+        <div class="btns-wrapper">
+            <button id="info">O STRONIE</button>
+            <button id="settings"><span class="material-icons">settings</span></button>
+        </div>
+    </header>
 
-    <p id="message">Jestem wiadomością.</p>
+    <section class="modal closed">
+        <section class="set-weather closed">
+            <button class="close-btn"><span class="material-icons">clear</span></button>
+            <h4>Wybór lokalizacji:</h4>
+
+            <form id="city-form">
+
+                <div class="input-box">
+                    <input id="city-input" type="text" placeholder="np. Rzeszów" autocomplete="off">
+
+                    <button id="get-pos" type="button"><span class="material-icons">location_on</span></button>
+                </div>
+                
+
+                <button type="submit" id="set-city" class="">USTAW MIASTO
+                </button>
+            </form>
+            <p id="search-status" style="display:none"></p>
+
+            <!-- <div class="split"></div>
+            <p>Ostatnio używane:</p>
+            <ul class="city-list">
+                <li>Warszawa, Polska</li>
+            </ul> -->
+
+        </section>
+        <section class="about closed">
+            <button class="close-btn"><span class="material-icons">clear</span></button>
+            <h4>omnieomnieomnieomnie</h4>
+        </section>
+
+        <section class="settings closed">
+            <button class="close-btn"><span class="material-icons">clear</span></button>
+            <h4>USTAWIENIA :D</h4>
+        </section>
+
+        <!-- KOLEJNE MODALE -->
+    </section>
+
+    <section id="current">
+        <h2 id="location">…, …</h3>
+        <button id="change-loc">ZMIEŃ LOKALIZACJĘ</button>
+        <div id="preview-box">
+            <h1 class="temp">—°</h1>
+
+            <div id="preview-weather">
+                <div class="icon">
+                    <img src="icons/01d.svg" height="100%" alt="">
+                    <!-- <img src="icons/archive/droplets.svg" height="100%" alt="" class="skew"> -->
+                </div>
+            </div>
+        </div>
+        
+        
+
+
+        <div class="details">
+            <div class="feels_like-icon">odczuwalna:&nbsp<span class="feels_like">— °</span></div>
+
+            <div class="description-icon description">…</div>
+
+            <div class="parameter-icon pressure-icon">
+                <img src="icons/condition-pressure.svg" alt="">
+                <div class="pressure">— hPa</div>
+                <div class="icon-name">ciśnienie</div>
+            </div>
+
+            <div class="parameter-icon wind-icon">
+                <img class="wind_icon" src="icons/condition-wind — kopia.svg" alt="">
+                <div class="wind_speed">— m/s</div>
+                <div class="icon-name">wiatr</div>
+            </div>
+
+            <div class="parameter-icon clouds-icon">
+                <img src="icons/condition-clouds.svg" alt="">
+                <div class="clouds">100%</div>
+                <div class="icon-name">zachmurzenie</div>
+            </div>
+
+            <div class="parameter-icon humidity-icon">
+                <div class="humidity">100</div>
+                <!-- <img src="icons/condition-humidity.svg" alt=""> -->
+                <div class="icon-name">wilgotność</div>
+            </div>
+
+            <div class="parameter-icon sunrise-sunset-icon">
+                <img src="icons/condition-sunrise-sunset.svg" alt="">
+                <div class="sunrise">—:—</div>
+                <div class="sunset">—:—</div>
+            </div>
+        </div>
+        
+        <p class="dt">…czas…</p>
+
+        <div id="background">
+            <img src="pictures/01d.jpg" alt="">
+        </div>
+    </section>
+
+    <section id="forecast">
+        <h3>Prognoza</h3>
+
+        <div id="forecast-container">
+            <h4>60-minutowa</h4>
+            <div class="forecast-section minutely">
+                <div class="chart">
+                    <svg viewBox="0 0 61 4" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+
+                    </svg>
+
+                    <div class="level"></div>
+                    <div class="level"></div>
+                    <div class="level"></div>
+
+                    <div class="quarter"></div>
+                    <div class="quarter"></div>
+                    <div class="quarter"></div>
+                    <div class="quarter"></div>
+                    <div class="quarter"></div>
+
+                    <div class="intensity heavy">silny opad</div>
+                    <div class="intensity moderate">umiarkowany</div>
+                    <div class="intensity light">lekki</div>
+                </div>
+                <div class="time">
+                    <div class="hour">22:31</div>
+                    <div class="hour">22:46</div>
+                    <div class="hour">0:01</div>
+                    <div class="hour">0:16</div>
+                    <div class="hour">0:31</div>
+                </div>
+                <div class="opis">
+                    Opady zaczną się około <span>0:00</span>.
+                </div>
+            </div>
+
+            <h4>48-godzinna</h4>
+            <div class="forecast-section hourly">
+            </div>
+
+            <h4>8-dniowa</h4>
+            <div class="forecast-section daily">
+                <div class="wrapper">
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        © 2020 Piotr Grzegorczyk
+    </footer>
 </body>
 </html>

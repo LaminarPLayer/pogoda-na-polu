@@ -1,0 +1,50 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<style>
+    #rain{
+        animation: rain .6s linear infinite normal;
+    }
+    @keyframes rain{
+        from{
+            transform: translateY(0);
+        }
+        to{
+            transform: translateY(128px);
+        }
+    }
+</style>
+
+<g id="09d" clip-path="url(#clip0)">
+<g id="rain">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M144 64V0H160V64H144Z" fill="#72ADB5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M144 -64V-128L160 -128V-64H144Z" fill="#72ADB5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M144 192V128H160V192H144Z" fill="#72ADB5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M96 128L96 64H112L112 128H96Z" fill="#72ADB5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M96 0L96 -64H112L112 0H96Z" fill="#72ADB5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M96 256V192H112V256H96Z" fill="#72ADB5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M48 64V0H64V64H48Z" fill="#72ADB5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M48 -64V-128L64 -128V-64H48Z" fill="#72ADB5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M48 192V128H64V192H48Z" fill="#72ADB5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1.90735e-06 128L4.70488e-06 64H16L16 128H1.90735e-06Z" fill="#72ADB5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1.90735e-06 0L4.70488e-06 -64H16L16 0H1.90735e-06Z" fill="#72ADB5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 256L2.79753e-06 192H16L16 256H0Z" fill="#72ADB5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M240 64V0H256V64H240Z" fill="#72ADB5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M240 -64V-128L256 -128V-64H240Z" fill="#72ADB5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M240 192V128H256V192H240Z" fill="#72ADB5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M192 128V64H208V128H192Z" fill="#72ADB5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M192 0V-64H208V0H192Z" fill="#72ADB5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M192 256V192H208V256H192Z" fill="#72ADB5"/>
+</g>
+<rect id="first1" x="96" y="240" width="16" height="16" fill="#72ADB5"/>
+<rect id="first3" x="192" y="240" width="16" height="16" fill="#72ADB5"/>
+<rect id="second1" x="144" y="240" width="16" height="16" fill="#72ADB5"/>
+<rect id="second2" x="240" y="240" width="16" height="16" fill="#72ADB5"/>
+<rect id="second3" x="48" y="240" width="16" height="16" fill="#72ADB5"/>
+<rect id="first2" y="240" width="16" height="16" fill="#72ADB5"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="256" height="256" fill="white"/>
+</clipPath>
+</defs>
+</svg>
