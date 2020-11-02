@@ -201,7 +201,8 @@ function closeModal(){
 
 function fetchData(lat, lon){
 
-    // // POBIERANIE DANYCH
+    // POBIERANIE DANYCH
+    // język i jednostki
     fetch(`/.netlify/functions/weather?lat=${lat}&lon=${lon}`)
         .then((data) => data.json())
         .then(jsonData => {

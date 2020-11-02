@@ -7,7 +7,7 @@ exports.handler = async (event, context) => {
 
     let weatherData;
 
-    let response = await fetch(`http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`);
+    let response = await fetch(`http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&&lang=pl`);
     let data = await response.json();
     weatherData = await data;
 
