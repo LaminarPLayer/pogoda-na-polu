@@ -208,6 +208,7 @@ function fetchData(lat, lon){
             console.log(jsonData);
             weather = jsonData;
             closeModal();
+            updateData();
         })
 
         
