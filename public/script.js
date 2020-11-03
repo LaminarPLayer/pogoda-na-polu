@@ -39,7 +39,6 @@ closeBtns.forEach(btn => {
 // O MNIE
 const aboutBtn = document.querySelector('#info');
 aboutBtn.addEventListener('click', ()=>{
-    debugger;
     openModal('about');
 })
 
