@@ -160,9 +160,15 @@ function updateCity(geocoder){
                 lon = results[0].geometry.location.lng();
 
                 // zapisanie do pamięci nazwy miasta i współrzędnych
+                changeLoc.textContent = "ZMIEŃ LOKALIZACJĘ";
                 localStorage.setItem('lastCity', locationName);
                 localStorage.setItem('lastLat', lat);
                 localStorage.setItem('lastLon', lon);
+
+                // USUNIĘCIE POCZĄTKOWEGO MIGANIA PRZYSIKU WYBORU LOKALIZACJI
+                changeLoc.classList.remove('first-visit');
+                updatePageOverflow();
+
             }
             if(locSuccess){
                 city.textContent = locationName;
@@ -205,27 +211,27 @@ function fetchData(lat, lon){
 
     // POBIERANIE DANYCH
     // język i jednostki
-    fetch(`/.netlify/functions/weather?lat=${lat}&lon=${lon}`)
-        .then((data) => data.json())
-        .then(jsonData => {
-            console.log(jsonData);
-            weather = jsonData;
-            closeModal();
-            updateData();
-        })
-
-        
-
-    // RĘCZNE DANE
-    // fetch(`sample.json`)
+    // fetch(`/.netlify/functions/weather?lat=${lat}&lon=${lon}`)
     //     .then((data) => data.json())
     //     .then(jsonData => {
     //         console.log(jsonData);
     //         weather = jsonData;
     //         closeModal();
-
-    //         setTimeout(updateData, 500);
+    //         updateData();
     //     })
+
+        
+
+    // RĘCZNE DANE
+    fetch(`sample.json`)
+        .then((data) => data.json())
+        .then(jsonData => {
+            console.log(jsonData);
+            weather = jsonData;
+            closeModal();
+
+            setTimeout(updateData, 500);
+        })
 }
 
 // FUNKCJA USTAWIAJĄCA OSTATNIĄ LOKALIZACJĘ
@@ -233,6 +239,20 @@ window.onload = function setLastLocation() {
     if(localStorage.getItem('lastCity') && localStorage.getItem('lastLat') && localStorage.getItem('lastLon') ){
         cityInput.value = localStorage.getItem('lastCity');
         setCity.click();
+    }
+    else{
+        changeLoc.classList.add('first-visit');
+        updatePageOverflow();
+    }
+}
+function updatePageOverflow() {
+    if(changeLoc.classList.contains('first-visit')){
+        document.body.style.height = "100vh";
+        document.body.style.overflowY = "hidden";
+    }
+    else{
+        document.body.style.overflowY = "";
+        document.body.style.height = "";
     }
 }
 
