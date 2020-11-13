@@ -248,10 +248,10 @@ window.onload = function setLastLocation() {
 function updatePageOverflow() {
     if(changeLoc.classList.contains('first-visit')){
         document.body.style.height = "100vh";
-        document.body.style.overflowY = "hidden";
+        document.body.style.overflow = "hidden";
     }
     else{
-        document.body.style.overflowY = "";
+        document.body.style.overflow = "";
         document.body.style.height = "";
     }
 }
