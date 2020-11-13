@@ -166,8 +166,7 @@ function updateCity(geocoder){
                 localStorage.setItem('lastLon', lon);
 
                 // USUNIĘCIE POCZĄTKOWEGO MIGANIA PRZYSIKU WYBORU LOKALIZACJI
-                changeLoc.classList.remove('first-visit');
-                updatePageOverflow();
+                alreadyVisited();
 
             }
             if(locSuccess){
@@ -241,19 +240,14 @@ window.onload = function setLastLocation() {
         setCity.click();
     }
     else{
-        changeLoc.classList.add('first-visit');
-        updatePageOverflow();
+        firstVisit();
     }
 }
-function updatePageOverflow() {
-    if(changeLoc.classList.contains('first-visit')){
-        document.body.style.height = "100vh";
-        document.body.style.overflow = "hidden";
-    }
-    else{
-        document.body.style.overflow = "";
-        document.body.style.height = "";
-    }
+function firstVisit() {
+    document.body.classList.add('first-visit');
+}
+function alreadyVisited() {
+    document.body.classList.remove('first-visit');
 }
 
 function updateData(){

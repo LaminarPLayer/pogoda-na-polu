@@ -120,6 +120,68 @@ th, td {
   font-size: inherit;
 }
 
+body.first-visit {
+  height: 100vh;
+  overflow: hidden;
+}
+
+body.first-visit #change-loc {
+  -webkit-animation: 1s pulse cubic-bezier(0.75, 0, 0.9, 1) infinite alternate;
+          animation: 1s pulse cubic-bezier(0.75, 0, 0.9, 1) infinite alternate;
+}
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.25);
+            box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.25);
+    background: #fff2;
+  }
+  to {
+    -webkit-transform: scale(1.04);
+            transform: scale(1.04);
+    -webkit-box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.25);
+            box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.25);
+    background: #E1B000;
+  }
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.25);
+            box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.25);
+    background: #fff2;
+  }
+  to {
+    -webkit-transform: scale(1.04);
+            transform: scale(1.04);
+    -webkit-box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.25);
+            box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.25);
+    background: #E1B000;
+  }
+}
+
+body.first-visit .parameter-icon img {
+  -webkit-filter: opacity(0.1);
+          filter: opacity(0.1);
+}
+
+body.first-visit::after {
+  content: '';
+  position: fixed;
+  width: 100vw;
+  height: 70vh;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 30vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#000));
+  background: linear-gradient(transparent, #000);
+}
+
 header {
   background: #ffffff08;
   position: relative;
@@ -198,59 +260,6 @@ img.small {
   margin: 0;
   margin-top: 1rem;
   font-size: 1.25rem;
-}
-
-#current #change-loc.first-visit {
-  -webkit-animation: 1s pulse cubic-bezier(0.75, 0, 0.9, 1) infinite alternate;
-          animation: 1s pulse cubic-bezier(0.75, 0, 0.9, 1) infinite alternate;
-  z-index: 5;
-}
-
-#current #change-loc.first-visit::after {
-  content: '';
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  top: 10rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(#000d), to(black));
-  background: linear-gradient(transparent, #000d, black);
-}
-
-@-webkit-keyframes pulse {
-  from {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.25);
-            box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.25);
-    background: #fff2;
-  }
-  to {
-    -webkit-transform: scale(1.04);
-            transform: scale(1.04);
-    -webkit-box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.25);
-            box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.25);
-    background: #E1B000;
-  }
-}
-
-@keyframes pulse {
-  from {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.25);
-            box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.25);
-    background: #fff2;
-  }
-  to {
-    -webkit-transform: scale(1.04);
-            transform: scale(1.04);
-    -webkit-box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.25);
-            box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.25);
-    background: #E1B000;
-  }
 }
 
 #current #preview-box {

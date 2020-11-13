@@ -112,6 +112,47 @@ th, td  {font-size: .875rem;}
 }
 
 // STYLE NA TELEFON
+
+// *** pierwsza wizyta ***
+body.first-visit{
+
+    height: 100vh;
+    overflow: hidden;
+
+    #change-loc{
+        animation: 1s pulse cubic-bezier(0.75, 0, 0.9, 1) infinite alternate;
+    
+    }
+    @keyframes pulse {
+        from{
+            transform: scale(1);
+            box-shadow: 0 .25rem .25rem 0 rgba(0, 0, 0, 0.25);
+            background: #fff2;
+        };
+        to{
+            transform: scale(1.04);
+            box-shadow: 0 .5rem .5rem 0 rgba(0, 0, 0, 0.25);
+            background: #E1B000;
+        };
+    }
+    
+    .parameter-icon img{
+        filter: opacity(.1);
+    }
+
+    &::after{
+        content: '';
+        position: fixed;
+        width: 100vw;
+        height: 70vh;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 30vh;
+        background: linear-gradient(transparent, #000);
+    }
+}
+// ***
+
 header{
     // @include darker-bg();
     background: #ffffff08;
@@ -172,34 +213,6 @@ img.small{
         margin:0;
         margin-top: 1rem;
         font-size: 1.25rem;
-    }
-
-    #change-loc.first-visit{
-        animation: 1s pulse cubic-bezier(0.75, 0, 0.9, 1) infinite alternate;
-        z-index: 5;
-
-        &::after{
-            content: '';
-            position: fixed;
-            width: 100vw;
-            height: 100vh;
-            left: 50%;
-            transform: translateX(-50%);
-            top: 10rem;
-            background: linear-gradient(transparent, #000d, black);
-        }
-    }
-    @keyframes pulse {
-        from{
-            transform: scale(1);
-            box-shadow: 0 .25rem .25rem 0 rgba(0, 0, 0, 0.25);
-            background: #fff2;
-        };
-        to{
-            transform: scale(1.04);
-            box-shadow: 0 .5rem .5rem 0 rgba(0, 0, 0, 0.25);
-            background: #E1B000;
-        };
     }
 
     #preview-box{
