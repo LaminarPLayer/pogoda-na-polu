@@ -61,8 +61,6 @@ changeLoc.addEventListener('click', ()=>{
     openModal('set-weather');
 })
 
-
-
 // POBRANIE DANYCH
 function initMap(){
     const geocoder = new google.maps.Geocoder();
@@ -160,6 +158,11 @@ function updateCity(geocoder){
                 }
                 lat = results[0].geometry.location.lat();
                 lon = results[0].geometry.location.lng();
+
+                // zapisanie do pamięci nazwy miasta i współrzędnych
+                localStorage.setItem('lastCity', locationName);
+                localStorage.setItem('lastLat', lat);
+                localStorage.setItem('lastLon', lon);
             }
             if(locSuccess){
                 city.textContent = locationName;
@@ -223,6 +226,14 @@ function fetchData(lat, lon){
 
     //         setTimeout(updateData, 500);
     //     })
+}
+
+// FUNKCJA USTAWIAJĄCA OSTATNIĄ LOKALIZACJĘ
+window.onload = function setLastLocation() {
+    if(localStorage.getItem('lastCity') && localStorage.getItem('lastLat') && localStorage.getItem('lastLon') ){
+        cityInput.value = localStorage.getItem('lastCity');
+        setCity.click();
+    }
 }
 
 function updateData(){
