@@ -211,27 +211,27 @@ function fetchData(lat, lon){
 
     // POBIERANIE DANYCH
     // język i jednostki
-    // fetch(`/.netlify/functions/weather?lat=${lat}&lon=${lon}`)
-    //     .then((data) => data.json())
-    //     .then(jsonData => {
-    //         console.log(jsonData);
-    //         weather = jsonData;
-    //         closeModal();
-    //         updateData();
-    //     })
-
-        
-
-    // RĘCZNE DANE
-    fetch(`sample.json`)
+    fetch(`/.netlify/functions/weather?lat=${lat}&lon=${lon}`)
         .then((data) => data.json())
         .then(jsonData => {
             console.log(jsonData);
             weather = jsonData;
             closeModal();
-
-            setTimeout(updateData, 500);
+            updateData();
         })
+
+        
+
+    // RĘCZNE DANE
+    // fetch(`sample.json`)
+    //     .then((data) => data.json())
+    //     .then(jsonData => {
+    //         console.log(jsonData);
+    //         weather = jsonData;
+    //         closeModal();
+
+    //         setTimeout(updateData, 500);
+    //     })
 }
 
 // FUNKCJA USTAWIAJĄCA OSTATNIĄ LOKALIZACJĘ
