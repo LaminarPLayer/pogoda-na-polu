@@ -12,27 +12,27 @@
 
     @keyframes dash1{
         0%{
-            stroke-dashoffset: 31.69768905639648;
+            stroke-dashoffset: -31.697689056396484;
         }
         6%{
-            stroke-dashoffset: 31.69768905639648;
+            stroke-dashoffset: -31.697689056396484;
         }
         70%{
-            stroke-dashoffset: 63.39537811279296;
+            stroke-dashoffset: 0;
         }
         100%{
-            stroke-dashoffset: 95.09306716918944;
+            stroke-dashoffset: 31.697689056396484;
         }
     }
     @keyframes dash3{
         0%{
-            stroke-dashoffset: 37.69771575927734;
+            stroke-dashoffset: -37.697715759277344;
         }
         75%{
-            stroke-dashoffset: 75.39543151855468;
+            stroke-dashoffset: 0;
         }
         100%{
-            stroke-dashoffset: 113.093147277832;
+            stroke-dashoffset: 37.697715759277344;
         }
     }
 </style>
