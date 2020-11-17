@@ -148,6 +148,9 @@ function updateCity(geocoder){
             let locationName = '';
             let locSuccess = false;
 
+            // TESTOWANKO
+            console.log(results);
+
             for(let i=0; i<results[0].address_components.length;i++){
                 if (results[0].address_components[i].types[0] === "locality"){
                     locationName=locationName.concat(results[0].address_components[i].long_name);
