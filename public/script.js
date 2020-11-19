@@ -152,9 +152,12 @@ function updateCity(geocoder){
             console.log(results);
 
             for(let i=0; i<results[0].address_components.length;i++){
-                if (results[0].address_components[i].types[0] === "locality"){
-                    locationName=locationName.concat(results[0].address_components[i].long_name);
-                    locSuccess = true;
+                for(let iComponent=0; iComponent<results[0].address_components[i].types.length; iComponent++){
+                    if (results[0].address_components[i].types[iComponent] === "locality"){
+                        locationName=locationName.concat(results[0].address_components[i].long_name);
+                        locSuccess = true;
+                        console.log('jejjj, mam to miasto')
+                    }
                 }
                 if (results[0].address_components[i].types[0] === "country"){
                     locationName=locationName.concat(`, ${results[0].address_components[i].long_name}`);
