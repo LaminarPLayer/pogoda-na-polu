@@ -609,7 +609,7 @@ img.small{
                 flex: 0 0 5.5rem;
                 height: 12rem;
                 border-right: .0625rem solid #fff1;
-                background: #fff1;
+                background: rgba(255, 255, 255, 0.1);
 
                 &:first-of-type{
                     border-radius: .5rem 0 0 .5rem;
@@ -617,7 +617,10 @@ img.small{
                 &:last-of-type{
                     border-radius: 0 .5rem .5rem 0;
                     border:0;
-                    
+                }
+
+                &.night{
+                    background: rgba(255, 255, 255, 0.05);
                 }
 
                 .hourly-icon{

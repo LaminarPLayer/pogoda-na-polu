@@ -405,6 +405,7 @@ function updateHourly(){
     
     const dayNames = ['dzisiaj', 'jutro', 'pojutrze'];
     let day = 0;
+    let nightClass;
 
     for(let hour = 0; hour < weather.hourly.length; hour++){
         const icon = weather.hourly[hour].weather[0].icon;
@@ -444,9 +445,17 @@ function updateHourly(){
             iconMod = '';
         }
 
+        // CZY MAMY DZIEŃ, CZY NOC
+        if(icon.includes("d")){
+            nightClass='';
+        }
+        else{
+            nightClass=' night';
+        }
+
         // WPROWADZENIE DANYCH NA STRONĘ
         hourlyForecast.insertAdjacentHTML('beforeend',
-            `<div class="hourly-column">
+            `<div class="hourly-column${nightClass}">
             <div class="hourly-icon">
                 <img src="icons/${icon}.svg" alt="" class="${iconMod}">
             </div>
