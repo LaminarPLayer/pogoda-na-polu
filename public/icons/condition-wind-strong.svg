@@ -3,57 +3,48 @@
 <style>
     #wind1{
         stroke-dasharray: 63.39546585083008;
-        animation: dash1 3s ease-out infinite;
+        animation: dash1 1.265421s  cubic-bezier(.2,0,.67,1) infinite;
     }
     #wind2{
         stroke-dasharray: 87.39546203613281;
-        animation: dash2 3s ease-out infinite;
+        animation: dash2 1.4s       cubic-bezier(.2,0,.67,1) infinite;
     }
     #wind3{
         stroke-dasharray: 75.39546203613281;
-        animation: dash3 3s ease-out infinite;
+        animation: dash3 1.6213s    cubic-bezier(.2,0,.67,1) infinite;
     }
 
     @keyframes dash1{
         0%{
-            stroke-dashoffset: -63.39546585083008;
-        }
-        48%{
-            stroke-dashoffset: 0;
-        }
-        88%{
             stroke-dashoffset: 63.39546585083008;
+        }
+        50%{
+            stroke-dashoffset: 126.7909317016602;
         }
         100%{
-            stroke-dashoffset: 63.39546585083008;
+            stroke-dashoffset: 190.1863975524902;
         }
     }
     @keyframes dash2{
         0%{
-            stroke-dashoffset: -87.39546203613281;
+            stroke-dashoffset: 87.39546203613281;
         }
         50%{
-            stroke-dashoffset: 0;
-        }
-        98%{
-            stroke-dashoffset: 87.39546203613281;
+            stroke-dashoffset: 174.7909240722656;
         }
         100%{
-            stroke-dashoffset: 87.39546203613281;
+            stroke-dashoffset: 262.1863861083984;
         }
     }
     @keyframes dash3{
         0%{
-            stroke-dashoffset: -75.39546203613281;
-        }
-        52%{
-            stroke-dashoffset: 0;
-        }
-        93%{
             stroke-dashoffset: 75.39546203613281;
+        }
+        50%{
+            stroke-dashoffset: 150.7909240722656;
         }
         100%{
-            stroke-dashoffset: 75.39546203613281;
+            stroke-dashoffset: 226.1863861083984;
         }
     }
 </style>

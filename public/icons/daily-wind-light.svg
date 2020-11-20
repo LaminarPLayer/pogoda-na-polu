@@ -1,0 +1,44 @@
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<style>
+    #wind1{
+        stroke-dasharray: 31.697689056396484;
+        animation: dash1 5.5s ease-in-out infinite;
+    }
+    #wind3{
+        stroke-dasharray: 37.697715759277344;
+        animation: dash3 5.5s ease-in-out infinite;
+    }
+
+    @keyframes dash1{
+        0%{
+            stroke-dashoffset: 31.69768905639648;
+        }
+        <!-- 1%{
+            stroke-dashoffset: 31.69768905639648;
+        } -->
+        50%{
+            stroke-dashoffset: 63.39537811279296;
+        }
+        100%{
+            stroke-dashoffset: 95.09306716918944;
+        }
+    }
+    @keyframes dash3{
+        0%{
+            stroke-dashoffset: 37.69771575927734;
+        }
+        50%{
+            stroke-dashoffset: 75.39543151855468;
+        }
+        100%{
+            stroke-dashoffset: 113.093147277832;
+        }
+    }
+</style>
+
+<g id="winds">
+<path id="wind1" d="M13.1837 3.18367C13.9184 2.44898 14.9388 2 16 2C18.2041 2 20 3.79592 20 6C20 8.20408 18.2041 10 16 10H0" stroke="white" stroke-width="4"/>
+<path id="wind3" d="M19.1837 24.8163C19.9184 25.551 20.9388 26 22 26C24.2041 26 26 24.2041 26 22C26 19.7959 24.2041 18 22 18H0" stroke="white" stroke-width="4"/>
+</g>
+</svg>

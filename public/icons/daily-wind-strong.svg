@@ -3,36 +3,36 @@
 <style>
     #wind1{
         stroke-dasharray: 31.697689056396484;
-        animation: dash1 2.628s ease-out infinite;
+        animation: dash1 1.265421s cubic-bezier(.2,0,.67,1) infinite;
     }
     #wind3{
         stroke-dasharray: 37.697715759277344;
-        animation: dash3 2.628s ease-out infinite;
+        animation: dash3 1.6213s cubic-bezier(.2,0,.67,1) infinite;
     }
 
     @keyframes dash1{
         0%{
-            stroke-dashoffset: -31.697689056396484;
+            stroke-dashoffset: 31.69768905639648;
         }
-        6%{
-            stroke-dashoffset: -31.697689056396484;
-        }
-        70%{
-            stroke-dashoffset: 0;
+        <!-- 1%{
+            stroke-dashoffset: 31.69768905639648;
+        } -->
+        50%{
+            stroke-dashoffset: 63.39537811279296;
         }
         100%{
-            stroke-dashoffset: 31.697689056396484;
+            stroke-dashoffset: 95.09306716918944;
         }
     }
     @keyframes dash3{
         0%{
-            stroke-dashoffset: -37.697715759277344;
+            stroke-dashoffset: 37.69771575927734;
         }
-        75%{
-            stroke-dashoffset: 0;
+        50%{
+            stroke-dashoffset: 75.39543151855468;
         }
         100%{
-            stroke-dashoffset: 37.697715759277344;
+            stroke-dashoffset: 113.093147277832;
         }
     }
 </style>

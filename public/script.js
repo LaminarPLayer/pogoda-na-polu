@@ -156,7 +156,6 @@ function updateCity(geocoder){
                     if (results[0].address_components[i].types[iComponent] === "locality"){
                         locationName=locationName.concat(results[0].address_components[i].long_name);
                         locSuccess = true;
-                        console.log('jejjj, mam to miasto')
                     }
                 }
                 if (results[0].address_components[i].types[0] === "country"){
@@ -351,6 +350,7 @@ function updateMinutely(){
     let line = `0,4`;
     
     for(let minute = 0; minute<weather.minutely.length; minute++){
+        
         const date = new Date(weather.minutely[minute].dt * 1000);
         const time = date.toLocaleTimeString('pl', {hour: 'numeric', minute: '2-digit'});
         const precision = 100;
@@ -385,7 +385,7 @@ function updateMinutely(){
     }
 
     chart.insertAdjacentHTML('beforeend',
-        `<polyline points="${line} 61,4" fill="#41DAEF" stroke="none"/>`
+        `<polyline points="${line} 60,4" fill="#41DAEF" stroke="none"/>`
     )
 }
 function updateHourly(){
@@ -517,7 +517,7 @@ function updateDaily(){
                     <span class="daily-pop">${pop}%</span>
                 </div>
                 <div class="daily-wind">
-                    <img src="icons/daily-wind.svg" alt="" style="transform: rotate(${90+windDeg}deg)">
+                    <img src="icons/daily-wind-strong.svg" alt="" style="transform: rotate(${90+windDeg}deg)">
                     <span class="daily-wind-speed">${windSpeed} km/h</span>
                 </div>
                 <div class="daily-pressure">
