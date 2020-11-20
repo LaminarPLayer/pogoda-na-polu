@@ -312,6 +312,17 @@ function updateCurrent(){
         wDOMc.weather[0].icon.classList.remove("small");
     }
 
+    // change wind icon
+    if(wc.wind_speed * 3.6 < 9.5){
+        weatherDOM.current.wind_icon.src='icons/condition-wind-light.svg';
+    }
+    else if(wc.wind_speed * 3.6 < 24.5){
+        weatherDOM.current.wind_icon.src='icons/condition-wind-moderate.svg';
+    }
+    else{
+        weatherDOM.current.wind_icon.src='icons/condition-wind-strong.svg';
+    }
+
     // change photo
     background.src = `pictures/${wc.weather[0].icon}.jpg`;
     if( wc.weather[0].icon === '01d'||
@@ -473,6 +484,7 @@ function updateDaily(){
         const windDeg = weather.daily[day].wind_deg;
         const windSpeed = Math.round(weather.daily[day].wind_speed*3.6);
         const pressure = weather.daily[day].pressure;
+        let dailyWindIcon;
         
         // WYBÓR KROPLI
         let droplet = `<img src="icons/daily-droplet-3.svg" alt="">`;
@@ -501,6 +513,17 @@ function updateDaily(){
             iconMod = '';
         }
 
+        // ustawienie ikonki wiatru
+        if(windSpeed < 9.5){
+            dailyWindIcon='icons/daily-wind-light.svg';
+        }
+        else if(windSpeed < 24.5){
+            dailyWindIcon='icons/daily-wind-moderate.svg';
+        }
+        else{
+            dailyWindIcon='icons/daily-wind-strong.svg';
+        }
+
         // WPROWADZENIE DANYCH NA STRONĘ
         dailyForecast.insertAdjacentHTML('beforeend',
             `<div class="daily-row">
@@ -517,7 +540,7 @@ function updateDaily(){
                     <span class="daily-pop">${pop}%</span>
                 </div>
                 <div class="daily-wind">
-                    <img src="icons/daily-wind-strong.svg" alt="" style="transform: rotate(${90+windDeg}deg)">
+                    <img src="${dailyWindIcon}" alt="" style="transform: rotate(${90+windDeg}deg)">
                     <span class="daily-wind-speed">${windSpeed} km/h</span>
                 </div>
                 <div class="daily-pressure">

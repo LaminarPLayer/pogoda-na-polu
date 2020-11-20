@@ -3,11 +3,11 @@
 <style>
     #wind1{
         stroke-dasharray: 31.697689056396484;
-        animation: dash1 1.265421s cubic-bezier(.2,0,.67,1) infinite;
+        animation: dash1 .865421s cubic-bezier(.2,0,.67,1) infinite;
     }
     #wind3{
         stroke-dasharray: 37.697715759277344;
-        animation: dash3 1.6213s cubic-bezier(.2,0,.67,1) infinite;
+        animation: dash3 .9213s cubic-bezier(.2,0,.67,1) infinite;
     }
 
     @keyframes dash1{
