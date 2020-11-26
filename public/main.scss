@@ -7,34 +7,6 @@
     background: rgba(0, 0, 0, .25);
 }
 
-@mixin h-scroll{
-    &::-webkit-scrollbar {
-        /*     width: 10px; */
-            
-        background:transparent;
-        height: .25rem;
-    
-    }
-        
-    /* Track */
-    &::-webkit-scrollbar-track {  
-    
-    }
-        
-    /* Handle */
-    &::-webkit-scrollbar-thumb {
-        background: #ffffff80;
-        box-shadow: 0 0 6px rgba(0,0,0,0.25);
-        border-radius: .125rem;
-    }
-    &::-webkit-scrollbar-thumb:window-inactive {
-        // background: #ffffff4a;
-    }
-    &::-webkit-scrollbar-button{
-        width: .75rem;
-    }
-}
-
 /* RESET */
 *{
     margin: 0;
@@ -652,8 +624,6 @@ img.small{
             overflow-x: scroll;
             display: flex;
 
-            @include h-scroll();
-
 
             &::before, &::after{
                 content: '';
@@ -732,8 +702,6 @@ img.small{
             width: 100%;
             overflow-x: scroll;
             display: flex;
-
-            @include h-scroll();
 
             &::before, &::after{
                 content: '';
