@@ -186,7 +186,7 @@ header {
   background: #ffffff08;
   position: relative;
   z-index: 20;
-  width: 100%;
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -235,39 +235,46 @@ header .btns-wrapper #settings {
 
 header #load-bar {
   display: none;
+  overflow-x: hidden;
 }
 
 header #load-bar.loading {
   position: absolute;
   top: 100%;
   left: 0;
-  width: 80%;
-  height: .125rem;
+  width: 100%;
+  height: .0625rem;
   display: block;
-  background: #fff8;
+  background: #fff;
+  -webkit-transform-origin: 0%;
+          transform-origin: 0%;
   -webkit-animation: loading 1s ease-in-out infinite;
           animation: loading 1s ease-in-out infinite;
 }
 
 @-webkit-keyframes loading {
-  from {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    opacity: 1;
   }
-  to {
-    -webkit-transform: translateX(125%);
-            transform: translateX(125%);
+  100% {
+    -webkit-transform: scaleX(100%);
+            transform: scaleX(100%);
+    opacity: 0;
   }
 }
 
 @keyframes loading {
-  from {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    opacity: 1;
   }
-  to {
-    -webkit-transform: translateX(125%);
-            transform: translateX(125%);
+  100% {
+    -webkit-transform: scaleX(100%);
+            transform: scaleX(100%);
+    opacity: 0;
   }
 }
 

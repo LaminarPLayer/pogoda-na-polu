@@ -138,6 +138,7 @@ function initMap(){
         searchStatus.style.display = '';
         searchStatus.textContent = `Nie można było pobrać współrzędnych.`;
         console.warn(`ERROR(${err.code}): ${err.message}`);
+        loadBar.classList.remove('loading');
     }
     getPos.addEventListener('click', () => {
         loadBar.classList.add('loading');
@@ -187,12 +188,14 @@ function updateCity(geocoder){
             else{
                 searchStatus.style.display = '';
                 searchStatus.textContent ="Nie znaleziono takiego miasta.";
+                loadBar.classList.remove('loading');
             }
             
         }
         else{
             searchStatus.style.display = '';
             searchStatus.textContent ="Nie znaleziono takiego miejsca lub wystąpił błąd z wyszukiwaniem.";
+            loadBar.classList.remove('loading');
         }
     });
 }
@@ -228,6 +231,10 @@ function fetchData(lat, lon){
             closeModal();
             updateData();
         })
+        .catch((error) => {
+            console.error('Error:', error);
+            loadBar.classList.remove('loading');
+        });
 
         
 
