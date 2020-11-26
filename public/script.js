@@ -349,6 +349,28 @@ function updateCurrent(){
     else{
         background.style.objectPosition = 'center';
     }
+    // change mobile Chrome bar
+    colorCodes = JSON.parse(`{
+        "01d": "#1d4b75",
+        "01n": "#141118",
+        "02d": "#3d3327",
+        "02n": "#1d272b",
+        "03d": "#223242",
+        "03n": "#001d2e",
+        "04d": "#091a22",
+        "04n": "#3b1b35",
+        "09d": "#1a1717",
+        "09n": "#1b2b29",
+        "10d": "#1a1717",
+        "10n": "#1b2b29",
+        "11d": "#292728",
+        "11n": "#1f1729",
+        "13d": "#545251",
+        "13n": "#142730",
+        "50d": "#2f3325",
+        "50n": "#3b2e26"
+    }`);
+    document.querySelector('meta[name="theme-color"]').setAttribute("content", colorCodes[wc.weather[0].icon]);
 }
 
 function updateMinutely(){
