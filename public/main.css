@@ -233,6 +233,44 @@ header .btns-wrapper #settings {
   width: 2.625rem;
 }
 
+header #load-bar {
+  display: none;
+}
+
+header #load-bar.loading {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 80%;
+  height: .125rem;
+  display: block;
+  background: #fff8;
+  -webkit-animation: loading 1s ease-in-out infinite;
+          animation: loading 1s ease-in-out infinite;
+}
+
+@-webkit-keyframes loading {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(125%);
+            transform: translateX(125%);
+  }
+}
+
+@keyframes loading {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(125%);
+            transform: translateX(125%);
+  }
+}
+
 img.skew {
   -webkit-transform: skew(-11deg) scale(0.8);
           transform: skew(-11deg) scale(0.8);
@@ -1014,6 +1052,7 @@ footer {
   width: 2.5rem;
   margin: 0;
   height: 2.5rem;
+  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

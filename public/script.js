@@ -53,7 +53,10 @@ settingsBtn.addEventListener('click', () => {
 const cityForm = document.querySelector("#city-form");
 const cityInput = document.querySelector("#city-input");
 const setCity = document.querySelector('#set-city');
-const searchStatus = document.querySelector('#search-status')
+const searchStatus = document.querySelector('#search-status');
+
+// pasek ładowania
+const loadBar = document.querySelector('#load-bar');
 
 const city = document.querySelector("#location");
 const changeLoc = document.querySelector('#change-loc');
@@ -65,6 +68,7 @@ changeLoc.addEventListener('click', ()=>{
 function initMap(){
     const geocoder = new google.maps.Geocoder();
     setCity.addEventListener("click", () => {
+        loadBar.classList.add('loading');
         updateCity(geocoder);
     });
     
@@ -136,6 +140,7 @@ function initMap(){
         console.warn(`ERROR(${err.code}): ${err.message}`);
     }
     getPos.addEventListener('click', () => {
+        loadBar.classList.add('loading');
         navigator.geolocation.getCurrentPosition(success, error, options);
     })
 }
@@ -234,7 +239,7 @@ function fetchData(lat, lon){
     //         weather = jsonData;
     //         closeModal();
 
-    //         setTimeout(updateData, 500);
+    //         setTimeout(updateData, 2500);
     //     })
 }
 
@@ -261,6 +266,8 @@ function updateData(){
     updateMinutely()
     updateHourly();
     updateDaily();
+
+    loadBar.classList.remove('loading');
 }
 
 function updateCurrent(){
