@@ -246,7 +246,7 @@ function fetchData(lat, lon){
     //         weather = jsonData;
     //         closeModal();
 
-    //         setTimeout(updateData, 2500);
+    //         setTimeout(updateData, 500);
     //     })
 }
 

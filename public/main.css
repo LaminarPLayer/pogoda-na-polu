@@ -186,7 +186,7 @@ header {
   background: #ffffff08;
   position: relative;
   z-index: 20;
-  width: 100vw;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -742,6 +742,25 @@ img.small {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  /* Track */
+  /* Handle */
+}
+
+#forecast #forecast-container .hourly::-webkit-scrollbar {
+  /*     width: 10px; */
+  background: transparent;
+  height: .25rem;
+}
+
+#forecast #forecast-container .hourly::-webkit-scrollbar-thumb {
+  background: #ffffff80;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+  border-radius: .125rem;
+}
+
+#forecast #forecast-container .hourly::-webkit-scrollbar-button {
+  width: .75rem;
 }
 
 #forecast #forecast-container .hourly::before, #forecast #forecast-container .hourly::after {
@@ -852,6 +871,25 @@ img.small {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  /* Track */
+  /* Handle */
+}
+
+#forecast #forecast-container .daily::-webkit-scrollbar {
+  /*     width: 10px; */
+  background: transparent;
+  height: .25rem;
+}
+
+#forecast #forecast-container .daily::-webkit-scrollbar-thumb {
+  background: #ffffff80;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+  border-radius: .125rem;
+}
+
+#forecast #forecast-container .daily::-webkit-scrollbar-button {
+  width: .75rem;
 }
 
 #forecast #forecast-container .daily::before, #forecast #forecast-container .daily::after {
