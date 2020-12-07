@@ -761,6 +761,32 @@ img.small {
   position: relative;
 }
 
+#forecast #forecast-container .hourly::-webkit-scrollbar {
+  height: .0625rem;
+  background: transparent;
+}
+
+#forecast #forecast-container .hourly::-webkit-scrollbar-thumb {
+  background: white;
+}
+
+#forecast #forecast-container .hourly::-webkit-scrollbar-button {
+  width: .75rem;
+}
+
+@media screen and (min-width: 42em) {
+  #forecast #forecast-container .hourly::-webkit-scrollbar {
+    height: .5rem;
+  }
+  #forecast #forecast-container .hourly::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 0 0 .5rem .5rem;
+  }
+  #forecast #forecast-container .hourly::-webkit-scrollbar-button {
+    width: .5rem;
+  }
+}
+
 #forecast #forecast-container .hourly::before, #forecast #forecast-container .hourly::after {
   content: '';
   min-width: 1rem;
@@ -869,6 +895,32 @@ img.small {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+#forecast #forecast-container .daily::-webkit-scrollbar {
+  height: .0625rem;
+  background: transparent;
+}
+
+#forecast #forecast-container .daily::-webkit-scrollbar-thumb {
+  background: white;
+}
+
+#forecast #forecast-container .daily::-webkit-scrollbar-button {
+  width: .75rem;
+}
+
+@media screen and (min-width: 42em) {
+  #forecast #forecast-container .daily::-webkit-scrollbar {
+    height: .5rem;
+  }
+  #forecast #forecast-container .daily::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 0 0 .5rem .5rem;
+  }
+  #forecast #forecast-container .daily::-webkit-scrollbar-button {
+    width: .5rem;
+  }
 }
 
 #forecast #forecast-container .daily::before, #forecast #forecast-container .daily::after {
@@ -1214,6 +1266,15 @@ footer {
     -webkit-box-ordinal-group: 6;
         -ms-flex-order: 5;
             order: 5;
+  }
+  #forecast #forecast-container .hourly .hourly-column:first-of-type {
+    border-radius: .5rem 0 0 0;
+  }
+  #forecast #forecast-container .hourly .hourly-column:last-of-type {
+    border-radius: 0 .5rem 0 0;
+  }
+  #forecast #forecast-container .daily {
+    overflow-x: hidden;
   }
 }
 /*# sourceMappingURL=main.css.map */

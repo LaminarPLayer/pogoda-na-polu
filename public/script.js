@@ -237,7 +237,6 @@ function fetchData(lat, lon){
         });
 
         
-
     // RĘCZNE DANE
     // fetch(`sample.json`)
     //     .then((data) => data.json())
