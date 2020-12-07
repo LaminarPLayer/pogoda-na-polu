@@ -237,25 +237,35 @@ img.small{
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 
-    #location{
-        margin:0;
-        margin-top: 1rem;
-        font-size: 1.25rem;
+    #location-header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        top: 0;
+        margin-bottom: 5rem;
+
+        #location{
+            margin:0;
+            margin-top: 1rem;
+            font-size: 1.25rem;
+        }
     }
 
     #preview-box{
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        width: 85%;
+        width: 100%;
         max-width: 20rem;
-        margin-top: 9rem;
+        // margin-top: 9rem;
 
         .temp{
             font-size: 5rem;
             font-weight: 200;
-            margin-right: 1rem;
+            // margin-left: .25rem;
         }
         #preview-weather{
             display: flex;
@@ -311,105 +321,104 @@ img.small{
             }
 
 
-        &.pressure-icon{
-            img{
-                position: absolute;
-                transform: scale(.75);
-            }
-            .pressure{
-                position: absolute;
-                width: 100%;
-                left:50%;
-                bottom: 2.25rem;
-                transform: translateX(-50%);
-                text-align: center;
+            &.pressure-icon{
+                img{
+                    position: absolute;
+                    transform: scale(.75);
+                }
+                .pressure{
+                    position: absolute;
+                    width: 100%;
+                    left:50%;
+                    bottom: 2.25rem;
+                    transform: translateX(-50%);
+                    text-align: center;
 
-                font-size: 1.25rem;
-                font-weight: bold;
+                    font-size: 1.25rem;
+                    font-weight: bold;
+                }
             }
-        }
-        &.wind-icon{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: .5rem;
+            &.wind-icon{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: .5rem;
 
-            img{
+                img{
 
-            }
-            .wind_speed{
-                font-size: 1rem;
-                font-weight: bold;
-                margin-top: .75rem;
+                }
+                .wind_speed{
+                    font-size: 1rem;
+                    font-weight: bold;
+                    margin-top: .75rem;
 
-                // margin-right: .25rem;
+                    // margin-right: .25rem;
+                }
             }
-        }
-        &.clouds-icon{
-            img{
-                position: absolute;
+            &.clouds-icon{
+                img{
+                    position: absolute;
+                }
+                .clouds{
+                    position: absolute;
+                    bottom:40%;
+                    left: 50%;
+                    transform: translateX(-42%);
+                    font-size: 1.25rem;
+                    font-weight: bold;
+                }
             }
-            .clouds{
-                position: absolute;
-                bottom:40%;
-                left: 50%;
-                transform: translateX(-42%);
-                font-size: 1.25rem;
-                font-weight: bold;
-            }
-        }
-        &.humidity-icon{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: .5rem;
+            &.humidity-icon{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: .5rem;
 
-            img{
-                margin-left: .25rem;
-                padding-bottom: .75rem;
-            }
-            .humidity{
-                font-size: 1.75rem;
-                font-weight: bold;
+                img{
+                    margin-left: .25rem;
+                    padding-bottom: .75rem;
+                }
+                .humidity{
+                    font-size: 1.75rem;
+                    font-weight: bold;
 
-                // margin-right: .25rem;
+                    // margin-right: .25rem;
+                }
             }
-        }
-        &.sunrise-sunset-icon{
-            width: 16.5rem;
+            &.sunrise-sunset-icon{
+                width: 16.5rem;
 
-            img{
-                position: absolute;
-                left:50%;
-                top: 1rem;
-                transform: translateX(-50%);
+                img{
+                    position: absolute;
+                    left:50%;
+                    top: 1rem;
+                    transform: translateX(-50%);
+                }
+                .sunrise, .sunset{
+                    font-size: 1.125rem;
+                    font-weight: bold;
+                    // text-align: center;
+                    position: absolute;
+                    bottom: 1rem;
+                    left: 50%;
+                }
+                .sunrise{
+                    transform: translateX(calc(-50% - 2.875rem));
+                }
+                .sunset{
+                    transform: translateX(calc(-50% + 2.875rem));
+                }
             }
-            .sunrise, .sunset{
-                font-size: 1.125rem;
-                font-weight: bold;
-                // text-align: center;
-                position: absolute;
-                bottom: 1rem;
-                left: 50%;
-            }
-            .sunrise{
-                transform: translateX(calc(-50% - 2.875rem));
-            }
-            .sunset{
-                transform: translateX(calc(-50% + 2.875rem));
-            }
-        }
 
-        &.humidity-icon, &.clouds-icon{
-            display: none;
-        }
-            
+            &.humidity-icon, &.clouds-icon{
+                display: none;
+            }
         }
     }
     .dt{
         // align-self: flex-end;
-        color: rgba(255, 255, 255, .5);
+        color: rgba(255, 255, 255, .33);
         margin: .5rem;
     }
 
@@ -437,7 +446,7 @@ img.small{
             object-fit: cover;
             object-position: 30% center;
 
-            filter: blur(.125rem) brightness(.3);
+            filter: blur(.125rem) brightness(.33);
             transform: scale(1.03);
         }
     }
@@ -465,7 +474,7 @@ img.small{
         // filter: blur(.0625rem);
         // color: #fff6;
 
-        text-align: left;
+        text-align: center;
         width: calc(100% - 3rem);
         margin-top: 1rem;
         font-weight: 200;
@@ -473,7 +482,7 @@ img.small{
     }
 
     h4{
-        text-align: left;
+        text-align: center;
         width: calc(100% - 3rem);
     }
 
@@ -494,6 +503,7 @@ img.small{
 
         .minutely{
             width: calc(100% - 2rem);
+            max-width: 30rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -623,6 +633,7 @@ img.small{
             width: 100%;
             overflow-x: scroll;
             display: flex;
+            position: relative;
 
 
             &::before, &::after{
@@ -932,6 +943,36 @@ footer{
         
         #search-status{
             text-align: center;
+        }
+    }
+}
+
+// TABLET etc. FROM 48 REM
+@media screen and (min-width: 42em){
+    #current{
+        height: calc(100vh - 5.875rem);
+        min-height: 32rem;
+        justify-content: flex-end;
+
+        #location-header{
+            position: absolute;
+        }
+
+        #preview-box{
+            max-width: 34rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            place-items: center;
+        }
+
+        .details{
+            max-width: 34rem;
+
+            .parameter-icon{
+                &.wind-icon{
+                    order: 5;
+                }
+            }
         }
     }
 }

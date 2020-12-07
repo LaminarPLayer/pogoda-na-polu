@@ -283,18 +283,18 @@ function updateCurrent(){
 
     let miliseconds = new Date(wc.dt*1000);
     let currentTime = miliseconds.toLocaleString('pl', {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric',
         hour: 'numeric',
         minute: '2-digit',
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
     });
     miliseconds = new Date(wc.sunrise*1000);
     let sunriseTime = miliseconds.toLocaleTimeString('pl', {hour: 'numeric', minute:'2-digit'});
     miliseconds = new Date(wc.sunset*1000);
     let sunsetTime = miliseconds.toLocaleTimeString('pl', {hour: 'numeric', minute:'2-digit'});
 
-    wDOMc.dt.textContent = `${currentTime}`;
+    wDOMc.dt.textContent = `Pobranie danych: ${currentTime}`;
     wDOMc.weather[0].description.textContent = `${wc.weather[0].description}`;
     wDOMc.temp.textContent         = `${Math.round(wc.temp)}°`;
     wDOMc.feels_like.textContent   = `${Math.round(wc.feels_like)}°`;
@@ -339,15 +339,51 @@ function updateCurrent(){
 
     // change photo
     background.src = `pictures/${wc.weather[0].icon}.jpg`;
-    if( wc.weather[0].icon === '01d'||
-        wc.weather[0].icon === '02n'){
+    if( wc.weather[0].icon === '01d'){
         background.style.objectPosition = '28% center';
+        background.style.filter="blur(.125rem) brightness(.33)"
+    }    
+    else if(wc.weather[0].icon === '01n'){
+        background.style.objectPosition = 'center';
+        background.style.filter="blur(.125rem) brightness(.67)"
+    }
+    else if(wc.weather[0].icon === '02n'){
+        background.style.objectPosition = 'left center';
+        background.style.filter="blur(.125rem) brightness(.67)"
     }
     else if(wc.weather[0].icon === '04n'){
         background.style.objectPosition = '36% center';
+        background.style.filter="blur(.0625rem) brightness(.25)"
+    }
+    else if(wc.weather[0].icon === '09d' ||
+            wc.weather[0].icon === '10d'){
+        background.style.objectPosition = '56% center';
+        background.style.filter="blur(.125rem) brightness(.33)"
+    }
+    else if(wc.weather[0].icon === '09n' ||
+            wc.weather[0].icon === '10n'){
+        background.style.objectPosition = '56% center';
+        background.style.filter="blur(.0625rem) brightness(.5)"
+    }
+    else if(wc.weather[0].icon === '11d'){
+        background.style.objectPosition = 'center';
+        background.style.filter="blur(.125rem) brightness(0.25) contrast(1.08)"
+    }
+    else if(wc.weather[0].icon === '11n'){
+        background.style.objectPosition = 'center 75%';
+        background.style.filter="blur(.125rem) brightness(0.33) contrast(1.08)"
+    }
+    else if(wc.weather[0].icon === '13d'){
+        background.style.objectPosition = 'center 33%';
+        background.style.filter="blur(.125rem) brightness(.25)"
+    }
+    else if(wc.weather[0].icon === '13n'){
+        background.style.objectPosition = 'center 42%';
+        background.style.filter="blur(.125rem) brightness(.33)"
     }
     else{
         background.style.objectPosition = 'center';
+        background.style.filter="blur(.125rem) brightness(.33)"
     }
     // change mobile Chrome bar
     colorCodes = JSON.parse(`{
@@ -355,20 +391,20 @@ function updateCurrent(){
         "01n": "#0B090D",
         "02d": "#14100C",
         "02n": "#0A111A",
-        "03d": "#0B1117",
-        "03n": "#000D14",
-        "04d": "#040A0D",
+        "03d": "#444b4c",
+        "03n": "#090f13",
+        "04d": "#14252b",
         "04n": "#140912",
-        "09d": "#0F0D0D",
-        "09n": "#0B1211",
-        "10d": "#0F0D0D",
-        "10n": "#0B1211",
+        "09d": "#262b2e",
+        "09n": "#0e1112",
+        "10d": "#262b2e",
+        "10n": "#0e1112",
         "11d": "#141313",
         "11n": "#110D17",
         "13d": "#1F1E1E",
         "13n": "#081014",
         "50d": "#151710",
-        "50n": "#1C1612"
+        "50n": "#0f1011"
     }`);
     document.querySelector('meta[name="theme-color"]').setAttribute("content", colorCodes[wc.weather[0].icon]);
 }
@@ -492,21 +528,21 @@ function updateHourly(){
         // WPROWADZENIE DANYCH NA STRONĘ
         hourlyForecast.insertAdjacentHTML('beforeend',
             `<div class="hourly-column${nightClass}">
-            <div class="hourly-icon">
-                <img src="icons/${icon}.svg" alt="" class="${iconMod}">
-            </div>
-            <div class="hourly-temp">
-                ${temp}°
-            </div>
-            <div class="hourly-precipitation">
-                ${droplet}
-                <span class="hourly-pop">${pop}%</span>
-            </div>
-            <div class="hourly-time">
-                <div class="hourly-hour">${timeHour}</div>
-                <div class="hourly-day">${timeDay}</div>
-            </div>
-        </div>`
+                <div class="hourly-icon">
+                    <img src="icons/${icon}.svg" alt="" class="${iconMod}">
+                </div>
+                <div class="hourly-temp">
+                    ${temp}°
+                </div>
+                <div class="hourly-precipitation">
+                    ${droplet}
+                    <span class="hourly-pop">${pop}%</span>
+                </div>
+                <div class="hourly-time">
+                    <div class="hourly-hour">${timeHour}</div>
+                    <div class="hourly-day">${timeDay}</div>
+                </div>
+            </div>`
         );
     }
 
