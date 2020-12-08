@@ -64,6 +64,45 @@ changeLoc.addEventListener('click', ()=>{
     openModal('set-weather');
 })
 
+// DRAG TO SCROLL
+const hourlyForecast = document.querySelector(".forecast-section.hourly");
+// hourlyForecast.scrollTop = 100;
+// hourlyForecast.scrollLeft = 150;
+let hourlyScroll = { top: 0, left: 0, x: 0, y: 0 };
+const mouseDownHandler = function(e) {
+    // Change the cursor and prevent user from selecting the text
+    hourlyForecast.style.cursor = 'grabbing';
+    hourlyForecast.style.userSelect = 'none';
+    hourlyScroll = {
+        // The current scroll 
+        left: hourlyForecast.scrollLeft,
+        top: hourlyForecast.scrollTop,
+        // Get the current mouse position
+        x: e.clientX,
+        y: e.clientY,
+    };
+
+    document.addEventListener('mousemove', mouseMoveHandler);
+    document.addEventListener('mouseup', mouseUpHandler);
+};
+const mouseMoveHandler = function(e) {
+    // How far the mouse has been moved
+    const dx = e.clientX - hourlyScroll.x;
+    const dy = e.clientY - hourlyScroll.y;
+
+    // Scroll the element
+    hourlyForecast.scrollLeft = hourlyScroll.left - dx;
+    hourlyForecast.scrollTop = hourlyScroll.top - dy;
+};
+const mouseUpHandler = function() {
+    hourlyForecast.style.cursor = 'grab';
+    hourlyForecast.style.removeProperty('user-select');
+
+    document.removeEventListener('mousemove', mouseMoveHandler);
+    document.removeEventListener('mouseup', mouseUpHandler);
+};
+hourlyForecast.addEventListener('mousedown', mouseDownHandler);
+
 // POBRANIE DANYCH
 function initMap(){
     const geocoder = new google.maps.Geocoder();
@@ -471,7 +510,7 @@ function updateMinutely(){
     )
 }
 function updateHourly(){
-    const hourlyForecast = document.querySelector(".forecast-section.hourly");
+    
     hourlyForecast.textContent = '';
     
     const dayNames = ['dzisiaj', 'jutro', 'pojutrze'];
@@ -490,13 +529,13 @@ function updateHourly(){
         const timeDay = dayNames[day];
 
         // WYBÓR KROPLI
-        let droplet = `<img src="icons/daily-droplet-3.svg" alt="">`;
+        let droplet = `<img src="icons/daily-droplet-3.svg" alt="" draggable="false">`;
         if(pop===0){
-            droplet = `<img src="icons/daily-droplet-0.svg" alt="">`;
+            droplet = `<img src="icons/daily-droplet-0.svg" alt="" draggable="false">`;
         } else if(pop < 33){
-            droplet = `<img src="icons/daily-droplet-1.svg" alt="">`;
+            droplet = `<img src="icons/daily-droplet-1.svg" alt="" draggable="false">`;
         } else if(pop < 67){
-            droplet = `<img src="icons/daily-droplet-2.svg" alt="">`;
+            droplet = `<img src="icons/daily-droplet-2.svg" alt="" draggable="false">`;
         }
 
         // TRANSFORMACJA DESZCZU
@@ -528,7 +567,7 @@ function updateHourly(){
         hourlyForecast.insertAdjacentHTML('beforeend',
             `<div class="hourly-column${nightClass}">
                 <div class="hourly-icon">
-                    <img src="icons/${icon}.svg" alt="" class="${iconMod}">
+                    <img src="icons/${icon}.svg" alt="" class="${iconMod}" draggable="false">
                 </div>
                 <div class="hourly-temp">
                     ${temp}°
@@ -645,9 +684,3 @@ function odmianaMinuty(minNum){
         return `${minNum} minut`;
     }
 }
-
-// // ręczna pogoda :D
-// setTimeout(()=>{
-//     weather.current.weather[0].icon='09n';
-//     updateData();
-// }, 350)

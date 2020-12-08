@@ -16,7 +16,7 @@
         // background: linear-gradient(to top, transparent 43.75%, rgba(255, 255, 255, 0.05) 43.75% 56.25%, transparent 56.25%);
     }
     &::-webkit-scrollbar-thumb{
-        background: rgba(255, 255, 255, 1);
+        background: rgba(255, 255, 255, .75);
         // border-radius: 0 0 .5rem .5rem;
         // border-top: .0625rem solid white
     }
@@ -669,6 +669,11 @@ img.small{
             display: flex;
             position: relative;
 
+            // drag to scroll
+            cursor: grab;
+            &:active{
+                // cursor: grabbing;
+            }
 
             &::before, &::after{
                 content: '';

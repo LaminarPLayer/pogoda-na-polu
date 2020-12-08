@@ -759,6 +759,8 @@ img.small {
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  cursor: -webkit-grab;
+  cursor: grab;
 }
 
 #forecast #forecast-container .hourly::-webkit-scrollbar {
@@ -767,7 +769,7 @@ img.small {
 }
 
 #forecast #forecast-container .hourly::-webkit-scrollbar-thumb {
-  background: white;
+  background: rgba(255, 255, 255, 0.75);
 }
 
 #forecast #forecast-container .hourly::-webkit-scrollbar-button {
@@ -903,7 +905,7 @@ img.small {
 }
 
 #forecast #forecast-container .daily::-webkit-scrollbar-thumb {
-  background: white;
+  background: rgba(255, 255, 255, 0.75);
 }
 
 #forecast #forecast-container .daily::-webkit-scrollbar-button {
