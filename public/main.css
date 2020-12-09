@@ -390,6 +390,8 @@ img.small {
   margin: .25rem;
   padding: .5rem;
   font-size: .875rem;
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
 }
 
 #current .details .description .feels_like, #current .details .feels_like-icon .feels_like {
@@ -402,6 +404,8 @@ img.small {
   border-radius: .5rem;
   background: #fff1;
   margin: .25rem;
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
   position: relative;
 }
 
@@ -618,6 +622,8 @@ img.small {
   padding: 1rem 2.5rem;
   background: #fff1;
   border-radius: .5rem;
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
 }
 
 #forecast #forecast-container .minutely .chart {
@@ -814,6 +820,8 @@ img.small {
   height: 12rem;
   border-right: .0625rem solid #fff1;
   background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
 }
 
 #forecast #forecast-container .hourly .hourly-column:first-of-type {
@@ -941,6 +949,8 @@ img.small {
   -webkit-box-flex: 1;
       -ms-flex: 1 33rem;
           flex: 1 33rem;
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
 }
 
 #forecast #forecast-container .daily .wrapper .daily-row {

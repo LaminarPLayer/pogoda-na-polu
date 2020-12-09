@@ -38,6 +38,10 @@
     }
 }
 
+@mixin backblur{
+    backdrop-filter: blur(.5rem);
+}
+
 /* RESET */
 *{
     margin: 0;
@@ -329,6 +333,8 @@ img.small{
             margin: .25rem;
             padding: .5rem;
             font-size: .875rem;
+            
+            @include backblur();
 
             .feels_like{
                 font-weight: 700;
@@ -340,6 +346,8 @@ img.small{
             border-radius: .5rem;
             background: #fff1;
             margin:.25rem;
+
+            @include backblur();
 
             position: relative;
             .icon-name{
@@ -542,6 +550,8 @@ img.small{
             padding: 1rem 2.5rem;
             background: #fff1;
             border-radius: .5rem;
+            
+            @include backblur();
 
             .chart{
                 position: relative;
@@ -686,6 +696,8 @@ img.small{
                 height: 12rem;
                 border-right: .0625rem solid #fff1;
                 background: rgba(255, 255, 255, 0.1);
+                
+                @include backblur();
 
                 &:first-of-type{
                     border-radius: .5rem 0 0 .5rem;
@@ -764,6 +776,7 @@ img.small{
                 // width: calc(100% - 2rem);
                 // max-width: calc(100% - 2rem);
 
+                @include backblur();
 
                 .daily-row{
                     display: flex;
