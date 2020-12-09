@@ -66,8 +66,6 @@ changeLoc.addEventListener('click', ()=>{
 
 // DRAG TO SCROLL
 const hourlyForecast = document.querySelector(".forecast-section.hourly");
-// hourlyForecast.scrollTop = 100;
-// hourlyForecast.scrollLeft = 150;
 let hourlyScroll = { top: 0, left: 0, x: 0, y: 0 };
 const mouseDownHandler = function(e) {
     // Change the cursor and prevent user from selecting the text
@@ -308,7 +306,17 @@ function alreadyVisited() {
 function updateData(){
     updateCurrent();
 
-    updateMinutely()
+    const minutelyTitle = document.querySelector(".minutely-title");
+    const minutelyForecast = document.querySelector(".forecast-section.minutely");
+    if(weather.minutely){
+        minutelyTitle.style.display = "block";
+        minutelyForecast.style.display = "flex";
+        updateMinutely();
+    }
+    else{
+        minutelyTitle.style.display = "none";
+        minutelyForecast.style.display = "none";
+    }
     updateHourly();
     updateDaily();
 
@@ -448,10 +456,10 @@ function updateCurrent(){
 }
 
 function updateMinutely(){
-    const minutelyForecast = document.querySelector(".forecast-section.minutely");
     const chart = document.querySelector(".forecast-section.minutely .chart svg");
     const description = document.querySelector(".forecast-section.minutely .opis");
     const quarterTimes = document.querySelectorAll(".forecast-section.minutely .time .hour");
+
 
     chart.textContent = '';
 
