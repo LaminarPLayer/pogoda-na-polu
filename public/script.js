@@ -387,15 +387,15 @@ function updateCurrent(){
     background.src = `pictures/${wc.weather[0].icon}.jpg`;
     if( wc.weather[0].icon === '01d'){
         background.style.objectPosition = '28% center';
-        background.style.filter="blur(.125rem) brightness(.33)"
+        background.style.filter="blur(.0625rem) brightness(.33)"
     }    
     else if(wc.weather[0].icon === '01n'){
         background.style.objectPosition = 'center';
-        background.style.filter="blur(.125rem) brightness(.67)"
+        background.style.filter="blur(.0625rem) brightness(.67)"
     }
     else if(wc.weather[0].icon === '02n'){
         background.style.objectPosition = 'left center';
-        background.style.filter="blur(.125rem) brightness(.67)"
+        background.style.filter="blur(.0625rem) brightness(.67)"
     }
     else if(wc.weather[0].icon === '04n'){
         background.style.objectPosition = '36% center';
@@ -404,7 +404,7 @@ function updateCurrent(){
     else if(wc.weather[0].icon === '09d' ||
             wc.weather[0].icon === '10d'){
         background.style.objectPosition = '56% center';
-        background.style.filter="blur(.125rem) brightness(.33)"
+        background.style.filter="blur(.0625rem) brightness(.33)"
     }
     else if(wc.weather[0].icon === '09n' ||
             wc.weather[0].icon === '10n'){
@@ -413,23 +413,23 @@ function updateCurrent(){
     }
     else if(wc.weather[0].icon === '11d'){
         background.style.objectPosition = 'center';
-        background.style.filter="blur(.125rem) brightness(0.25) contrast(1.08)"
+        background.style.filter="blur(.0625rem) brightness(0.25) contrast(1.08)"
     }
     else if(wc.weather[0].icon === '11n'){
         background.style.objectPosition = 'center 75%';
-        background.style.filter="blur(.125rem) brightness(0.33) contrast(1.08)"
+        background.style.filter="blur(.0625rem) brightness(0.33) contrast(1.08)"
     }
     else if(wc.weather[0].icon === '13d'){
         background.style.objectPosition = 'center 33%';
-        background.style.filter="blur(.125rem) brightness(.25)"
+        background.style.filter="blur(.0625rem) brightness(.25)"
     }
     else if(wc.weather[0].icon === '13n'){
         background.style.objectPosition = 'center 42%';
-        background.style.filter="blur(.125rem) brightness(.33)"
+        background.style.filter="blur(.0625rem) brightness(.33)"
     }
     else{
         background.style.objectPosition = 'center';
-        background.style.filter="blur(.125rem) brightness(.33)"
+        background.style.filter="blur(.0625rem) brightness(.33)"
     }
     // change mobile Chrome bar
     colorCodes = JSON.parse(`{
