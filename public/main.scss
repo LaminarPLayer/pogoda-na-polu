@@ -1,6 +1,6 @@
 /* ZMIENNE I MIXINy*/
 :root{
-
+    --header-height: 4.5rem;
 }
 
 @mixin darker-bg {
@@ -62,6 +62,7 @@ body{
     font-family: 'Montserrat', sans-serif;
     color: white;
     background: black;
+    width: 100%;
 }
 input, textarea, button{
     font-family: 'Montserrat', sans-serif;
@@ -201,6 +202,7 @@ header{
     z-index: 20;
 
     width: 100%;
+    height: var(--header-height);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -336,12 +338,12 @@ img.small{
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #fff1;
+            background: #fff2;
             margin: .25rem;
             padding: .5rem;
             font-size: .875rem;
             
-            @include backblur();
+            // @include backblur();
 
             .feels_like{
                 font-weight: 700;
@@ -351,10 +353,10 @@ img.small{
             height: 8rem;
             width: 8rem;
             border-radius: .5rem;
-            background: #fff1;
+            background: #fff2;
             margin:.25rem;
 
-            @include backblur();
+            // @include backblur();
 
             position: relative;
             .icon-name{
@@ -391,9 +393,6 @@ img.small{
                 align-items: center;
                 padding-bottom: .5rem;
 
-                img{
-
-                }
                 .wind_speed{
                     font-size: 1rem;
                     font-weight: bold;
@@ -504,7 +503,7 @@ img.small{
     display: flex;    
     flex-direction: column;
     align-items: center;
-    padding-top: 3rem;
+    padding-top: 1rem;
 
 
     h3{
@@ -556,10 +555,10 @@ img.small{
             flex-direction: column;
             align-items: center;
             padding: 1rem 2.5rem;
-            background: #fff1;
+            background: #fff2;
             border-radius: .5rem;
             
-            @include backblur();
+            // @include backblur();
 
             .chart{
                 position: relative;
@@ -681,7 +680,7 @@ img.small{
 
         .hourly{
             @include scrollbar();
-
+            // @include backblur();
             width: 100%;
             overflow-x: scroll;
             display: flex;
@@ -703,9 +702,9 @@ img.small{
                 flex: 0 0 5.5rem;
                 height: 12rem;
                 border-right: .0625rem solid #fff1;
-                background: rgba(255, 255, 255, 0.1);
+                background: #fff2;
                 
-                @include backblur();
+                // @include backblur();
 
                 &:first-of-type{
                     border-radius: .5rem 0 0 .5rem;
@@ -716,7 +715,7 @@ img.small{
                 }
 
                 &.night{
-                    background: rgba(255, 255, 255, 0.05);
+                    background: #fff1;
                 }
 
                 .hourly-icon{
@@ -784,7 +783,7 @@ img.small{
                 // width: calc(100% - 2rem);
                 // max-width: calc(100% - 2rem);
 
-                @include backblur();
+                // @include backblur();
 
                 .daily-row{
                     display: flex;
@@ -795,7 +794,7 @@ img.small{
                     justify-content: space-evenly;
                     align-items: center;
                     border-bottom: .0675rem solid #fff1;
-                    background: #fff1;
+                    background: #fff2;
     
                     &:first-of-type{                    
                         border-radius: .5rem .5rem 0 0;
@@ -891,6 +890,7 @@ footer{
     padding: 1rem;
     font-size: .875rem;
     color: #fff8;
+    background: linear-gradient(to top, #0006, transparent);
 }
 
 .modal{
@@ -904,9 +904,9 @@ footer{
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 8rem;
-    background: #0008;
-    backdrop-filter: blur(1rem) grayscale(.75);
+    // padding-top: calc(var(--header-height + 1rem));
+    background: #000b;
+    backdrop-filter: blur(.5rem) grayscale(.67);
 
     transition: .125s;
 
@@ -918,7 +918,7 @@ footer{
 
     &>section{
         position: fixed;
-        top: 8rem;
+        top: calc(var(--header-height) + 1.125rem);
         width: calc(100% - 2rem);
         padding: 1.5rem 1rem 1rem 1rem;
         transition: .125s;
@@ -1009,7 +1009,7 @@ footer{
 // TABLET etc. FROM 48 REM
 @media screen and (min-width: 42em){
     #current{
-        height: calc(100vh - 5.875rem);
+        height: calc(100vh - .5rem);
         min-height: 32rem;
         justify-content: flex-end;
 

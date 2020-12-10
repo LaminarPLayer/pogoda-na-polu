@@ -38,49 +38,6 @@
         <div id="load-bar"></div>
     </header>
 
-    <section class="modal closed">
-        <section class="set-weather closed">
-            <button class="close-btn"><span class="material-icons">clear</span></button>
-            <h4>Wybór lokalizacji:</h4>
-
-            <form id="city-form">
-
-                <div class="input-box">
-                    <input id="city-input" type="text" placeholder="np. Rzeszów" autocomplete="off" onClick="this.setSelectionRange(0, this.value.length)">
-
-                    <button id="get-pos" type="button"><span class="material-icons">location_on</span></button>
-                </div>
-                
-
-                <button type="submit" id="set-city" class="">USTAW MIASTO
-                </button>
-            </form>
-            <p id="search-status" style="display:none"></p>
-
-            <!-- <div class="split"></div>
-            <p>Ostatnio używane:</p>
-            <ul class="city-list">
-                <li>Warszawa, Polska</li>
-            </ul> -->
-
-        </section>
-        <section class="about closed">
-            <button class="close-btn"><span class="material-icons">clear</span></button>
-            <h4>O stronie</h4>
-            <p>Strona tworzona z wykorzystaniem <b>HTML5</b>, <b>CSS3</b> (<b>SASS</b>), czystego <b>JavaScriptu</b>. Dane pogodowe pobierane są z API <b>OpenWeatherMap</b> (w celu ukrycia klucza API stosowane są <b>Lambda Functions</b> w <b>Netlify</b>). Do wyszukiwania położenia miast wykorzystywane jest <b>Google Maps JavaScript API</b>.</p>
-
-            <p>Easter eggs: pogoda dla współrzędnych 50,65-54,9N, 14,12-24,15E zmienia logo :)</p>
-        </section>
-
-        <section class="settings closed">
-            <button class="close-btn"><span class="material-icons">clear</span></button>
-            <h4>Ustawienia</h4>
-            <p>W tym miejscu wkrótce wprowadzone zostaną opcje wyłączenia animacji oraz zmiany jednostek.</p>
-        </section>
-
-        <!-- KOLEJNE MODALE -->
-    </section>
-
     <section id="current">
         <div id="location-header">
             <h2 id="location"></h3>
@@ -198,5 +155,48 @@
         projekt strony: <b>Piotr Grzegorczyk</b><br>
         dane pogodowe: <b><a href="https://openweathermap.org/">OpenWeatherMap</a></b>
     </footer>
+
+    <section class="modal closed">
+        <section class="set-weather closed">
+            <button class="close-btn"><span class="material-icons">clear</span></button>
+            <h4>Wybór lokalizacji:</h4>
+
+            <form id="city-form">
+
+                <div class="input-box">
+                    <input id="city-input" type="text" placeholder="np. Rzeszów" autocomplete="off" onClick="this.setSelectionRange(0, this.value.length)">
+
+                    <button id="get-pos" type="button"><span class="material-icons">location_on</span></button>
+                </div>
+                
+
+                <button type="submit" id="set-city" class="">USTAW MIASTO
+                </button>
+            </form>
+            <p id="search-status" style="display:none"></p>
+
+            <!-- <div class="split"></div>
+            <p>Ostatnio używane:</p>
+            <ul class="city-list">
+                <li>Warszawa, Polska</li>
+            </ul> -->
+
+        </section>
+        <section class="about closed">
+            <button class="close-btn"><span class="material-icons">clear</span></button>
+            <h4>O stronie</h4>
+            <p>Strona tworzona z wykorzystaniem <b>HTML5</b>, <b>CSS3</b> (<b>SASS</b>), czystego <b>JavaScriptu</b>. Dane pogodowe pobierane są z API <b>OpenWeatherMap</b> (w celu ukrycia klucza API stosowane są <b>Lambda Functions</b> w <b>Netlify</b>). Do wyszukiwania położenia miast wykorzystywane jest <b>Google Maps JavaScript API</b>.</p>
+
+            <p>Easter eggs: pogoda dla współrzędnych 50,65-54,9N, 14,12-24,15E zmienia logo :)</p>
+        </section>
+
+        <section class="settings closed">
+            <button class="close-btn"><span class="material-icons">clear</span></button>
+            <h4>Ustawienia</h4>
+            <p>W tym miejscu wkrótce wprowadzone zostaną opcje wyłączenia animacji oraz zmiany jednostek.</p>
+        </section>
+
+        <!-- KOLEJNE MODALE -->
+    </section>
 </body>
 </html>
