@@ -288,12 +288,13 @@ function fetchData(lat, lon){
     //         setTimeout(updateData, 500);
     //     })
 
-    // if (lat>50.65 && lat<54.9 && lon>14.12 && lon<24.15) {
-    //     logoImg.src = 'logo3-na-dworze.svg';
-    // }
-    // else{
-    //     logoImg.src = 'logo3.svg';
-    // }
+    // ZMIANA LOGO - EASTER EGG
+    if (lat>50.65 && lat<54.9 && lon>14.12 && lon<24.15) {
+        logoImg.src = 'logo3-na-dworze.svg';
+    }
+    else{
+        logoImg.src = 'logo3.svg';
+    }
 }
 
 // FUNKCJA USTAWIAJĄCA OSTATNIĄ LOKALIZACJĘ
