@@ -132,6 +132,7 @@ h1,h2,h3,h4{
 }
 a{
     color: inherit;
+    text-decoration: underline;
 }
 h1      {font-size: 1.5rem;}
 h2      {font-size: 1.25rem;}
@@ -211,8 +212,8 @@ header{
     @include backblur();
 
     #logo{
-        height: 4rem;
-        margin: .5rem 0 .375rem 0;
+        height: 3rem;
+        margin: .5rem 0 .75rem 0;
     }
     .btns-wrapper{
         display: flex;
@@ -465,6 +466,7 @@ img.small{
         // align-self: flex-end;
         color: rgba(255, 255, 255, .33);
         margin: .5rem;
+        font-size: .875rem;
     }
 
     #background{

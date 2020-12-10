@@ -55,6 +55,9 @@ const cityInput = document.querySelector("#city-input");
 const setCity = document.querySelector('#set-city');
 const searchStatus = document.querySelector('#search-status');
 
+// Ustawienie logo
+const logoImg = document.querySelector('#logo img');
+
 // pasek ładowania
 const loadBar = document.querySelector('#load-bar');
 
@@ -284,6 +287,13 @@ function fetchData(lat, lon){
 
     //         setTimeout(updateData, 500);
     //     })
+
+    // if (lat>50.65 && lat<54.9 && lon>14.12 && lon<24.15) {
+    //     logoImg.src = 'logo3-na-dworze.svg';
+    // }
+    // else{
+    //     logoImg.src = 'logo3.svg';
+    // }
 }
 
 // FUNKCJA USTAWIAJĄCA OSTATNIĄ LOKALIZACJĘ
@@ -340,7 +350,7 @@ function updateCurrent(){
     miliseconds = new Date(wc.sunset*1000);
     let sunsetTime = miliseconds.toLocaleTimeString('pl', {hour: 'numeric', minute:'2-digit'});
 
-    wDOMc.dt.textContent = `Pobranie danych: ${currentTime}`;
+    wDOMc.dt.textContent = `Dane z: ${currentTime}`;
     wDOMc.weather[0].description.textContent = `${wc.weather[0].description}`;
     wDOMc.temp.textContent         = `${Math.round(wc.temp)}°`;
     wDOMc.feels_like.textContent   = `${Math.round(wc.feels_like)}°`;

@@ -30,7 +30,7 @@
 </head>
 <body>
     <header>
-        <a href="javascript:window.location.reload();"><div id="logo"><img src="logo2.svg" height="100%" alt="logo Pięknej Pogody"></div></a>
+        <a href="javascript:window.location.reload();"><div id="logo"><img src="logo3.svg" height="100%" alt="logo Pięknej Pogody"></div></a>
         <div class="btns-wrapper">
             <button id="info">O STRONIE</button>
             <button id="settings"><span class="material-icons">settings</span></button>
@@ -46,7 +46,7 @@
             <form id="city-form">
 
                 <div class="input-box">
-                    <input id="city-input" type="text" placeholder="np. Rzeszów" autocomplete="off">
+                    <input id="city-input" type="text" placeholder="np. Rzeszów" autocomplete="off" onClick="this.setSelectionRange(0, this.value.length)">
 
                     <button id="get-pos" type="button"><span class="material-icons">location_on</span></button>
                 </div>
@@ -68,6 +68,8 @@
             <button class="close-btn"><span class="material-icons">clear</span></button>
             <h4>O stronie</h4>
             <p>Strona tworzona z wykorzystaniem <b>HTML5</b>, <b>CSS3</b> (<b>SASS</b>), czystego <b>JavaScriptu</b>. Dane pogodowe pobierane są z API <b>OpenWeatherMap</b> (w celu ukrycia klucza API stosowane są <b>Lambda Functions</b> w <b>Netlify</b>). Do wyszukiwania położenia miast wykorzystywane jest <b>Google Maps JavaScript API</b>.</p>
+
+            <p>Easter eggs: pogoda dla współrzędnych 50,65-54,9N, 14,12-24,15E zmienia logo :)</p>
         </section>
 
         <section class="settings closed">
@@ -192,7 +194,9 @@
         </div>
     </section>
     <footer>
-        © 2020 Piotr Grzegorczyk
+        * 2020 *<br>
+        projekt strony: <b>Piotr Grzegorczyk</b><br>
+        dane pogodowe: <b><a href="https://openweathermap.org/">OpenWeatherMap</a></b>
     </footer>
 </body>
 </html>
