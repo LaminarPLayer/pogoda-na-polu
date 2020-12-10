@@ -1,6 +1,8 @@
+@charset "UTF-8";
 /* ZMIENNE I MIXINy*/
 :root {
   --header-height: 4.5rem;
+  --footer-height: 5rem;
 }
 
 /* RESET */
@@ -327,6 +329,8 @@ img.small {
   padding: 1rem 1.25rem;
   background: #fff1;
   border-radius: 0 0 1rem 1rem;
+  -webkit-box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.25);
   -webkit-backdrop-filter: blur(0.5rem);
           backdrop-filter: blur(0.5rem);
 }
@@ -399,10 +403,12 @@ img.small {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #fff2;
+  background: #fff1;
   margin: .25rem;
   padding: .5rem;
   font-size: .875rem;
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
 }
 
 #current .details .description .feels_like, #current .details .feels_like-icon .feels_like {
@@ -413,8 +419,10 @@ img.small {
   height: 8rem;
   width: 8rem;
   border-radius: .5rem;
-  background: #fff2;
+  background: #fff1;
   margin: .25rem;
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
   position: relative;
 }
 
@@ -550,7 +558,7 @@ img.small {
   position: fixed;
   z-index: -1;
   top: 0;
-  bottom: 0;
+  left: 0;
   height: 100vh;
   width: 100%;
 }
@@ -580,7 +588,13 @@ img.small {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 1rem;
+  margin-top: .5rem;
+  background: #ffffff08;
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
+  -webkit-box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+  padding-bottom: .5rem;
 }
 
 #forecast h3 {
@@ -630,7 +644,7 @@ img.small {
       -ms-flex-align: center;
           align-items: center;
   padding: 1rem 2.5rem;
-  background: #fff2;
+  background: #fff1;
   border-radius: .5rem;
 }
 
@@ -827,7 +841,7 @@ img.small {
           flex: 0 0 5.5rem;
   height: 12rem;
   border-right: .0625rem solid #fff1;
-  background: #fff2;
+  background: #fff1;
 }
 
 #forecast #forecast-container .hourly .hourly-column:first-of-type {
@@ -969,7 +983,7 @@ img.small {
       -ms-flex-align: center;
           align-items: center;
   border-bottom: .0675rem solid #fff1;
-  background: #fff2;
+  background: #fff1;
 }
 
 #forecast #forecast-container .daily .wrapper .daily-row:first-of-type {
@@ -1085,11 +1099,28 @@ img.small {
 
 footer {
   text-align: center;
-  padding: 1rem;
-  font-size: .875rem;
+  height: var(--footer-height);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: #fff8;
-  background: -webkit-gradient(linear, left bottom, left top, from(#0006), to(transparent));
-  background: linear-gradient(to top, #0006, transparent);
+  background: #fff1;
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
+  -webkit-box-shadow: 0 -0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0 -0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+
+footer p {
+  font-size: .75rem;
+  margin: 0.125rem 0;
 }
 
 .modal {
@@ -1115,8 +1146,8 @@ footer {
   background: #000b;
   -webkit-backdrop-filter: blur(0.5rem) grayscale(0.67);
           backdrop-filter: blur(0.5rem) grayscale(0.67);
-  -webkit-transition: .125s;
-  transition: .125s;
+  -webkit-transition: .1s;
+  transition: .1s;
 }
 
 .modal.closed {
@@ -1130,9 +1161,10 @@ footer {
   position: fixed;
   top: calc(var(--header-height) + 1.125rem);
   width: calc(100% - 2rem);
+  max-width: 35rem;
   padding: 1.5rem 1rem 1rem 1rem;
-  -webkit-transition: .125s;
-  transition: .125s;
+  -webkit-transition: .1s;
+  transition: .1s;
   background: #fff1;
   border-radius: .5rem;
 }
@@ -1177,6 +1209,7 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  max-width: 25rem;
   -webkit-box-shadow: 0 0.75rem 0.75rem 0 rgba(0, 0, 0, 0.25);
           box-shadow: 0 0.75rem 0.75rem 0 rgba(0, 0, 0, 0.25);
 }
@@ -1257,9 +1290,15 @@ footer {
   text-align: center;
 }
 
+.modal .about .easter-egg {
+  margin-top: 3rem;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
 @media screen and (min-width: 42em) {
   #current {
-    height: calc(100vh - .5rem);
+    height: calc(100vh - 12rem);
     min-height: 32rem;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
@@ -1292,6 +1331,79 @@ footer {
   }
   #forecast #forecast-container .daily {
     overflow-x: hidden;
+  }
+  footer {
+    height: 2rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  footer p::before {
+    content: '⋄';
+    margin: 0 .5rem;
+  }
+  footer p:last-of-type::after {
+    content: '⋄';
+    margin: 0 .5rem;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  :root {
+    --footer-height: 2rem;
+    --current-width: calc(35rem + 6.25vw);
+  }
+  body {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: var(--current-width) auto;
+        grid-template-columns: var(--current-width) auto;
+    -ms-grid-rows: var(--header-height) calc(100vh - var(--header-height) - var(--footer-height)) var(--footer-height);
+        grid-template-rows: var(--header-height) calc(100vh - var(--header-height) - var(--footer-height)) var(--footer-height);
+        grid-template-areas: "header header" "current forecast" "footer footer";
+  }
+  header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: header;
+  }
+  #current {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: current;
+    width: 100%;
+    height: 100%;
+  }
+  #forecast {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: forecast;
+    margin-top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+  }
+  footer {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: footer;
+  }
+  .modal > section {
+    right: 1rem;
+  }
+  .modal .set-weather {
+    left: calc(var(--current-width) * .5);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 }
 /*# sourceMappingURL=main.css.map */

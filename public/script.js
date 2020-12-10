@@ -35,6 +35,11 @@ const closeBtns = document.querySelectorAll('.modal .close-btn');
 closeBtns.forEach(btn => {
     btn.addEventListener('click', closeModal)
 });
+modal.addEventListener('click', function(e){
+    if(e.currentTarget === e.target){
+        closeModal();
+    }
+});
 
 // O MNIE
 const aboutBtn = document.querySelector('#info');
