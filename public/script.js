@@ -314,10 +314,10 @@ function fetchData(lat, lon){
 
     // ZMIANA LOGO - EASTER EGG
     if (lat>50.65 && lat<54.9 && lon>14.12 && lon<24.15) {
-        logoImg.src = 'logo3-na-dworze.svg';
+        logoImg.src = 'logo4-na-dworze.svg';
     }
     else{
-        logoImg.src = 'logo3.svg';
+        logoImg.src = 'logo4.svg';
     }
 }
 
@@ -368,11 +368,14 @@ function updateCurrent(){
         minute: '2-digit',
         day: 'numeric',
         month: 'long',
-        year: 'numeric'
+        year: 'numeric',
+        timeZoneName: 'short'
     });
     miliseconds = new Date(wc.sunrise*1000);
+    miliseconds = locTime(miliseconds,weather.timezone_offset);
     let sunriseTime = miliseconds.toLocaleTimeString('pl', {hour: 'numeric', minute:'2-digit'});
     miliseconds = new Date(wc.sunset*1000);
+    miliseconds = locTime(miliseconds,weather.timezone_offset);
     let sunsetTime = miliseconds.toLocaleTimeString('pl', {hour: 'numeric', minute:'2-digit'});
 
     wDOMc.dt.textContent = `Dane z: ${currentTime}`;
@@ -506,7 +509,8 @@ function updateMinutely(){
         rain = true;
     }
     let change = false;
-    const dateNow = new Date (weather.minutely[0].dt * 1000);
+    let dateNow = new Date (weather.minutely[0].dt * 1000);
+    dateNow = locTime(dateNow,weather.timezone_offset);
 
     let quarterCounter = 0;
 
@@ -515,7 +519,8 @@ function updateMinutely(){
     
     for(let minute = 0; minute<weather.minutely.length; minute++){
         
-        const date = new Date(weather.minutely[minute].dt * 1000);
+        let date = new Date(weather.minutely[minute].dt * 1000);
+        date = locTime(date,weather.timezone_offset);
         const time = date.toLocaleTimeString('pl', {hour: 'numeric', minute: '2-digit'});
         const precision = 100;
         const value = Math.round(Math.log(weather.minutely[minute].precipitation + 1) * precision) / precision; 
@@ -530,11 +535,11 @@ function updateMinutely(){
 
         // SPRAWDZENIE CZY ZACZYNA SIĘ LUB KOŃCZY DESZCZ
         if(rain && !change && weather.minutely[minute].precipitation===0){
-            description.innerHTML = `Opady skończą się za ok. <span>${odmianaMinuty((date - dateNow)/60000)}</span>.`;
+            description.innerHTML = `Opady skończą się za <span>${odmianaMinuty((date - dateNow)/60000)}</span>.`;
             change = true;
         }
         else if(!rain && !change && weather.minutely[minute].precipitation !== 0){
-            description.innerHTML = `Opady zaczną się za ok. <span>${odmianaMinuty((date - dateNow)/60000)}</span>.`;
+            description.innerHTML = `Opady zaczną się za <span>${odmianaMinuty((date - dateNow)/60000)}</span>.`;
             change = true;
         }
     }
@@ -564,7 +569,8 @@ function updateHourly(){
         const icon = weather.hourly[hour].weather[0].icon;
         const temp = Math.round(weather.hourly[hour].temp);
         const pop = Math.round(weather.hourly[hour].pop * 100);
-        const time = new Date(weather.hourly[hour].dt*1000);
+        let time = new Date(weather.hourly[hour].dt*1000);
+        time = locTime(time,weather.timezone_offset);
         const timeHour = time.toLocaleTimeString('pl', {hour: 'numeric', minute:'2-digit'});
         if(hour !== 0 && timeHour==="0:00"){
             day++;
@@ -635,7 +641,8 @@ function updateDaily(){
     dailyForecast.textContent = '';
 
     for(let day = 0; day < weather.daily.length; day++){
-        const time = new Date(weather.daily[day].dt*1000);
+        let time = new Date(weather.daily[day].dt*1000);
+        // time = locTime(time,weather.timezone_offset);
         const weekday = (time.toLocaleDateString('pl', {weekday: 'short'})).replace(/\./g, '');
         const date = time.toLocaleDateString('pl', {day: 'numeric', month: 'numeric'});
         const icon = weather.daily[day].weather[0].icon;
@@ -726,4 +733,18 @@ function odmianaMinuty(minNum){
     else{
         return `${minNum} minut`;
     }
+}
+
+function locTime(date, timezone_offset){
+    // console.log(date);
+    // console.log(date.getTimezoneOffset());
+    // console.log(timezone_offset);
+
+    date.setMinutes(date.getMinutes()+date.getTimezoneOffset())
+    // console.log(date)
+    
+    date.setSeconds(date.getSeconds()+timezone_offset);
+    // console.log(date);
+
+    return date;
 }

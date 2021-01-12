@@ -225,13 +225,10 @@ header .btns-wrapper {
 
 header .btns-wrapper #info {
   margin-top: 0.25rem;
-  margin-right: .5rem;
 }
 
 header .btns-wrapper #settings {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -241,6 +238,8 @@ header .btns-wrapper #settings {
   margin-top: .25rem;
   height: 2.625rem;
   width: 2.625rem;
+  margin: 0;
+  padding: 0;
 }
 
 header #load-bar {

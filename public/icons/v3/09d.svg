@@ -2,16 +2,16 @@
 
 <style>
     #rain1{
-        animation: rain .45s cubic-bezier(.43,.45,.57,.55) infinite normal;
+        animation: rain .75s cubic-bezier(.43,.45,.57,.55) infinite normal;
     }
     #rain2{
-        animation: rain .45s cubic-bezier(.52,.48,.48,.52) .07s infinite normal;
+        animation: rain .75s cubic-bezier(.52,.48,.48,.52) .12s infinite normal;
     }
     #rain3{
-        animation: rain .45s cubic-bezier(.48,.52,.52,.48) .06s infinite normal;
+        animation: rain .75s cubic-bezier(.48,.52,.52,.48) .1s infinite normal;
     }
     #rain4{
-        animation: rain .45s cubic-bezier(.45,.43,.55,.57) infinite normal;
+        animation: rain .75s cubic-bezier(.45,.43,.55,.57) infinite normal;
     }
 
     @keyframes rain{
