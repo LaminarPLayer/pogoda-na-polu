@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNXW8RSX4S"></script>
@@ -15,8 +15,14 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Piękna Pogoda</title>
     <link rel="icon" type="image/png" href="/icons/favicon.png"/>
+    <meta name="description" content="Prognoza pogody dla (Mało)Polski i nie tylko">
 
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=no'>
+    <meta property="og:title" content="Pogoda na Polu" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pogodanapolu.netlify.app/" />
+    <meta property="og:image" content="pictures/preview.png" />
+
+    <meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1'>
 
     <meta name="theme-color" content="#000" />
 
@@ -40,7 +46,7 @@
 
     <section id="current">
         <div id="location-header">
-            <h2 id="location"></h3>
+            <h3 id="location"></h3>
             <button id="change-loc">USTAW LOKALIZACJĘ</button>
         </div>
 
@@ -102,10 +108,10 @@
     </section>
 
     <section id="forecast">
-        <h3>Prognoza</h3>
+        <h2>Prognoza</h2>
 
         <div id="forecast-container">
-            <h4 class="minutely-title">60-minutowa</h4>
+            <h3 class="minutely-title">60-minutowa</h3>
             <div class="forecast-section minutely">
                 <div class="chart">
                     <svg viewBox="0 0 60 4" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -138,11 +144,11 @@
                 </div>
             </div>
 
-            <h4>48-godzinna</h4>
+            <h3>48-godzinna</h3>
             <div class="forecast-section hourly">
             </div>
 
-            <h4>8-dniowa</h4>
+            <h3>8-dniowa</h3>
             <div class="forecast-section daily">
                 <div class="wrapper">
 
@@ -159,7 +165,7 @@
     <section class="modal closed">
         <section class="set-weather closed">
             <button class="close-btn"><span class="material-icons">clear</span></button>
-            <h4>Wybór lokalizacji:</h4>
+            <label for="city-input"><h4>Wybór lokalizacji:</h4></label>
 
             <form id="city-form">
 

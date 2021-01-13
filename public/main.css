@@ -374,6 +374,12 @@ img.small {
 #current #preview-box #preview-weather .icon {
   margin: 0;
   height: 8rem;
+  width: 8rem;
+}
+
+#current #preview-box #preview-weather .icon img {
+  width: 100%;
+  height: 100%;
 }
 
 #current .details {
@@ -439,6 +445,8 @@ img.small {
   position: absolute;
   -webkit-transform: scale(0.75);
           transform: scale(0.75);
+  height: 8rem;
+  width: 8rem;
 }
 
 #current .details .parameter-icon.pressure-icon .pressure {
@@ -470,6 +478,11 @@ img.small {
   padding-bottom: .5rem;
 }
 
+#current .details .parameter-icon.wind-icon img {
+  width: 4.125rem;
+  height: 3.25rem;
+}
+
 #current .details .parameter-icon.wind-icon .wind_speed {
   font-size: 1rem;
   font-weight: bold;
@@ -478,6 +491,8 @@ img.small {
 
 #current .details .parameter-icon.clouds-icon img {
   position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 #current .details .parameter-icon.clouds-icon .clouds {
@@ -506,6 +521,8 @@ img.small {
 #current .details .parameter-icon.humidity-icon img {
   margin-left: .25rem;
   padding-bottom: .75rem;
+  width: 100%;
+  height: 100%;
 }
 
 #current .details .parameter-icon.humidity-icon .humidity {
@@ -523,6 +540,8 @@ img.small {
   top: 1rem;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  height: 3.75rem;
+  width: 11rem;
 }
 
 #current .details .parameter-icon.sunrise-sunset-icon .sunrise, #current .details .parameter-icon.sunrise-sunset-icon .sunset {
@@ -548,7 +567,7 @@ img.small {
 }
 
 #current .dt {
-  color: rgba(255, 255, 255, 0.33);
+  color: #fff9;
   margin: .5rem;
   font-size: .875rem;
 }
@@ -596,7 +615,7 @@ img.small {
   padding-bottom: .5rem;
 }
 
-#forecast h3 {
+#forecast h2 {
   text-align: center;
   width: calc(100% - 3rem);
   margin-top: 1rem;
@@ -604,7 +623,7 @@ img.small {
   font-size: 1.5rem;
 }
 
-#forecast h4 {
+#forecast h3 {
   text-align: center;
   width: calc(100% - 3rem);
 }
@@ -867,6 +886,7 @@ img.small {
 
 #forecast #forecast-container .hourly .hourly-column .hourly-icon img {
   height: 3rem;
+  width: 3rem;
 }
 
 #forecast #forecast-container .hourly .hourly-column .hourly-temp {
@@ -888,6 +908,7 @@ img.small {
 
 #forecast #forecast-container .hourly .hourly-column .hourly-precipitation img {
   height: 1rem;
+  max-width: 0.90625rem;
   margin-right: .375rem;
 }
 
@@ -914,7 +935,7 @@ img.small {
 }
 
 #forecast #forecast-container .hourly .hourly-column .hourly-time .hourly-day {
-  color: #fff6;
+  color: #fff9;
   font-size: .875rem;
 }
 
@@ -1028,11 +1049,12 @@ img.small {
 
 #forecast #forecast-container .daily .wrapper .daily-row .daily-icon img {
   height: 3rem;
+  width: 3rem;
 }
 
 #forecast #forecast-container .daily .wrapper .daily-row .daily-temp {
   font-size: 1.25rem;
-  color: #fff6;
+  color: #fff9;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1083,6 +1105,7 @@ img.small {
 
 #forecast #forecast-container .daily .wrapper .daily-row .daily-wind img {
   height: .875rem;
+  width: 1.1125rem;
 }
 
 #forecast #forecast-container .daily .wrapper .daily-row .daily-wind .daily-wind-speed {

@@ -330,6 +330,12 @@ img.small{
             .icon{
                 margin: 0;
                 height: 8rem;
+                width: 8rem;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
         
@@ -384,6 +390,8 @@ img.small{
                 img{
                     position: absolute;
                     transform: scale(.75);
+                    height: 8rem;
+                    width: 8rem;
                 }
                 .pressure{
                     position: absolute;
@@ -404,6 +412,11 @@ img.small{
                 align-items: center;
                 padding-bottom: .5rem;
 
+                img{
+                    width: 4.125rem;
+                    height: 3.25rem;
+                }
+
                 .wind_speed{
                     font-size: 1rem;
                     font-weight: bold;
@@ -415,6 +428,9 @@ img.small{
             &.clouds-icon{
                 img{
                     position: absolute;
+                    width: 100%;
+                    height: 100%;
+
                 }
                 .clouds{
                     position: absolute;
@@ -434,6 +450,9 @@ img.small{
                 img{
                     margin-left: .25rem;
                     padding-bottom: .75rem;
+                    width: 100%;
+                    height: 100%;
+
                 }
                 .humidity{
                     font-size: 1.75rem;
@@ -450,6 +469,8 @@ img.small{
                     left:50%;
                     top: 1rem;
                     transform: translateX(-50%);
+                    height: 3.75rem;
+                    width: 11rem;
                 }
                 .sunrise, .sunset{
                     font-size: 1.125rem;
@@ -474,7 +495,7 @@ img.small{
     }
     .dt{
         // align-self: flex-end;
-        color: rgba(255, 255, 255, .33);
+        color: #fff9;
         margin: .5rem;
         font-size: .875rem;
     }
@@ -523,7 +544,7 @@ img.small{
     padding-bottom: .5rem;
 
 
-    h3{
+    h2{
         // position: absolute;
         // // top: 1.8125rem;
         // top:.5rem;
@@ -545,7 +566,7 @@ img.small{
         font-size: 1.5rem;
     }
 
-    h4{
+    h3{
         text-align: center;
         width: calc(100% - 3rem);
     }
@@ -741,6 +762,7 @@ img.small{
 
                     img{
                         height: 3rem;
+                        width: 3rem;
                     }
                 }
 
@@ -756,6 +778,7 @@ img.small{
 
                     img{
                         height: 1rem;
+                        max-width: 0.90625rem;
                         margin-right: .375rem;
                     }
                     .hourly-pop{
@@ -774,7 +797,7 @@ img.small{
                         // font-size: 1.25rem;
                     }
                     .hourly-day{
-                        color: #fff6;
+                        color: #fff9;
                         font-size: .875rem;
                     }
                 }
@@ -842,12 +865,13 @@ img.small{
                         width: 4rem;
                         img{
                             height: 3rem;
+                            width: 3rem;
                             // background: darkcyan;
                         }
                     }
                     .daily-temp{
                         font-size: 1.25rem;
-                        color: #fff6;
+                        color: #fff9;
                         display: flex;
                         justify-content: center;
                         width: 6rem;
@@ -883,6 +907,7 @@ img.small{
     
                         img{
                             height: .875rem;
+                            width: 1.1125rem;
                         }
                         .daily-wind-speed{
                             margin-left: .375rem;
