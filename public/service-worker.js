@@ -69,11 +69,13 @@ self.addEventListener("fetch", (event) => {
           console.log("Fetch failed; returning offline page instead.", error);
 
           const cache = await caches.open(CACHE_NAME);
-          const cachedResponse = await cache.match(OFFLINE_URL);
-          const cachedResponse = await cache.match('/logo4.svg');
-          const cachedResponse = await cache.match('/icons/offline-cloud.svg');
-          const cachedResponse = await cache.match('/icons/offline-sun.svg');
-          const cachedResponse = await cache.match('/icons/offline-dead-cloud.svg');
+          const cachedResponse = await cache.matchAll([
+              OFFLINE_URL,
+              '/logo4.svg',
+              '/icons/offline-sun.svg',
+              '/icons/offline-cloud.svg',
+              '/icons/offline-dead-cloud.svg'
+            ]);
           return cachedResponse;
         }
       })()
