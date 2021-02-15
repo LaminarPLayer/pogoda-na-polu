@@ -76,7 +76,7 @@ self.addEventListener("fetch", (event) => {
               '/icons/offline-cloud.svg',
               '/icons/offline-dead-cloud.svg'
             ]);
-          return cachedResponse;
+          return cachedResponse[0];
         }
       })()
     );
