@@ -47,8 +47,12 @@ self.addEventListener("activate", (event) => {
 
 // TESTTT
 self.addEventListener('fetch', function(event) {
-    event.respondWith(caches.match(event.request));
-});
+    event.respondWith(
+      caches.match(event.request).then(function(response) {
+        return response || fetch(event.request);
+      })
+    );
+  });
 
 // self.addEventListener("fetch", (event) => {
 //   // We only want to call event.respondWith() if this is a navigation request
