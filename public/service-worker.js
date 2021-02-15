@@ -70,7 +70,7 @@ self.addEventListener("fetch", (event) => {
           // the 4xx or 5xx range, the catch() will NOT be called.
           console.log("Fetch failed; returning offline page instead.", error);
 
-          const cache = await caches.open(CACHE_NAME);
+          const cache = await caches.open(MY_CACHE);
           const cachedResponse = await cache.match(OFFLINE_URL);
           return cachedResponse;
         }
