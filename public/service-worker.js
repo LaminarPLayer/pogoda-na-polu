@@ -30,70 +30,62 @@ self.addEventListener("install", (event) => {
   self.skipWaiting();
 });
 
-// self.addEventListener("activate", (event) => {
-//   event.waitUntil(
-//     (async () => {
-//       // Enable navigation preload if it's supported.
-//       // See https://developers.google.com/web/updates/2017/02/navigation-preload
-//       if ("navigationPreload" in self.registration) {
-//         await self.registration.navigationPreload.enable();
-//       }
-//     })()
-//   );
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    (async () => {
+      // Enable navigation preload if it's supported.
+      // See https://developers.google.com/web/updates/2017/02/navigation-preload
+      if ("navigationPreload" in self.registration) {
+        await self.registration.navigationPreload.enable();
+      }
+    })()
+  );
 
-//   // Tell the active service worker to take control of the page immediately.
-//   self.clients.claim();
-// });
+  // Tell the active service worker to take control of the page immediately.
+  self.clients.claim();
+});
 
-// TESTTT
-self.addEventListener('fetch', function(event) {
+
+self.addEventListener("fetch", (event) => {
+  // We only want to call event.respondWith() if this is a navigation request
+  // for an HTML page.
+  if (event.request.mode === "navigate") {
     event.respondWith(
-      caches.match(event.request).then(function(response) {
-        return response || fetch(event.request);
-      })
+      (async () => {
+        try {
+          // First, try to use the navigation preload response if it's supported.
+          const preloadResponse = await event.preloadResponse;
+          if (preloadResponse) {
+            return preloadResponse;
+          }
+
+          // Always try the network first.
+          const networkResponse = await fetch(event.request);
+          return networkResponse;
+        } catch (error) {
+          // catch is only triggered if an exception is thrown, which is likely
+          // due to a network error.
+          // If fetch() returns a valid HTTP response with a response code in
+          // the 4xx or 5xx range, the catch() will NOT be called.
+          console.log("Fetch failed; returning offline page instead.", error);
+
+          const cache = await caches.open(CACHE_NAME);
+          const cachedResponse = await cache.match([
+              OFFLINE_URL,
+              '/logo4.svg',
+              '/icons/offline-sun.svg',
+              '/icons/offline-cloud.svg',
+              '/icons/offline-dead-cloud.svg'
+            ]);
+          return cachedResponse;
+        }
+      })()
     );
-  });
+  }
 
-// self.addEventListener("fetch", (event) => {
-//   // We only want to call event.respondWith() if this is a navigation request
-//   // for an HTML page.
-//   if (event.request.mode === "navigate") {
-//     event.respondWith(
-//       (async () => {
-//         try {
-//           // First, try to use the navigation preload response if it's supported.
-//           const preloadResponse = await event.preloadResponse;
-//           if (preloadResponse) {
-//             return preloadResponse;
-//           }
-
-//           // Always try the network first.
-//           const networkResponse = await fetch(event.request);
-//           return networkResponse;
-//         } catch (error) {
-//           // catch is only triggered if an exception is thrown, which is likely
-//           // due to a network error.
-//           // If fetch() returns a valid HTTP response with a response code in
-//           // the 4xx or 5xx range, the catch() will NOT be called.
-//           console.log("Fetch failed; returning offline page instead.", error);
-
-//           const cache = await caches.open(CACHE_NAME);
-//           const cachedResponse = await cache.matchAll([
-//               OFFLINE_URL,
-//               '/logo4.svg',
-//               '/icons/offline-sun.svg',
-//               '/icons/offline-cloud.svg',
-//               '/icons/offline-dead-cloud.svg'
-//             ]);
-//           return cachedResponse[0];
-//         }
-//       })()
-//     );
-//   }
-
-//   // If our if() condition is false, then this fetch handler won't intercept the
-//   // request. If there are any other fetch handlers registered, they will get a
-//   // chance to call event.respondWith(). If no fetch handlers call
-//   // event.respondWith(), the request will be handled by the browser as if there
-//   // were no service worker involvement.
-// });
+  // If our if() condition is false, then this fetch handler won't intercept the
+  // request. If there are any other fetch handlers registered, they will get a
+  // chance to call event.respondWith(). If no fetch handlers call
+  // event.respondWith(), the request will be handled by the browser as if there
+  // were no service worker involvement.
+});
