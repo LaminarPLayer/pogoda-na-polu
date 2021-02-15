@@ -1,29 +1,5 @@
 <svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
 
-<style>
-    #snow1{
-        animation: snow 2s cubic-bezier(.35,.4,.65,.6) infinite normal;
-    }
-    #snow2{
-        animation: snow 2s cubic-bezier(.55,.45,.45,.55) .4s infinite normal;
-    }
-    #snow3{
-        animation: snow 2s cubic-bezier(.45,.55,.55,.45) .3s infinite normal;
-    }
-    #snow4{
-        animation: snow 2s cubic-bezier(.4,.35,.6,.65) infinite normal;
-    }
-
-    @keyframes snow{
-        from{
-            transform: translateY(0);
-        }
-        to{
-            transform: translateY(128px);
-        }
-    }
-</style>
-
 <g id="13d" clip-path="url(#clip0)">
 <g id="snow2">
 <path d="M92 -53H100V-11H92V-53Z" fill="#cccccc"/>

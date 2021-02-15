@@ -1,0 +1,7 @@
+<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="winds">
+<path id="wind3" d="M31 3H5" stroke="white" stroke-width="6" stroke-linecap="square"/>
+<path id="wind3_2" d="M31 3L31 29" stroke="white" stroke-width="6" stroke-linecap="square"/>
+<path id="wind3_3" d="M29 5L5 29" stroke="white" stroke-width="6" stroke-linecap="square"/>
+</g>
+</svg>

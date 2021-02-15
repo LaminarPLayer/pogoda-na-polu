@@ -1,0 +1,10 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<g id="50n">
+<path id="line1" d="M32 192H224" stroke="#CCCCCC" stroke-width="16" stroke-linecap="square"/>
+<path id="line2" d="M75 160L210 160" stroke="#B3B3B3" stroke-width="16" stroke-linecap="square"/>
+<path id="line3" d="M46 128L203 128" stroke="#BFBFBF" stroke-width="16" stroke-linecap="square"/>
+<path id="line4" d="M96 96L216 96" stroke="#A6A6A6" stroke-width="16" stroke-linecap="square"/>
+<path id="line5" d="M64 64L192 64" stroke="#B3B3B3" stroke-width="16" stroke-linecap="square"/>
+</g>
+</svg>

@@ -286,7 +286,6 @@ window.addEventListener('scroll', () => {
 function fetchData(lat, lon){
 
     // POBIERANIE DANYCH
-    // język i jednostki
     fetch(`/.netlify/functions/weather?lat=${lat}&lon=${lon}`)
         .then((data) => data.json())
         .then(jsonData => {
@@ -616,7 +615,7 @@ function updateHourly(){
         hourlyForecast.insertAdjacentHTML('beforeend',
             `<div class="hourly-column${nightClass}">
                 <div class="hourly-icon">
-                    <img src="icons/${icon}.svg" alt="" class="${iconMod}" draggable="false">
+                    <img src="icons/light/${icon}.svg" alt="" class="${iconMod}" draggable="false">
                 </div>
                 <div class="hourly-temp">
                     ${temp}°
@@ -683,15 +682,7 @@ function updateDaily(){
         }
 
         // ustawienie ikonki wiatru
-        if(windSpeed < 9.5){
-            dailyWindIcon='icons/daily-wind-light.svg';
-        }
-        else if(windSpeed < 24.5){
-            dailyWindIcon='icons/daily-wind-moderate.svg';
-        }
-        else{
-            dailyWindIcon='icons/daily-wind-strong.svg';
-        }
+        dailyWindIcon='icons/daily-wind-new.svg';
 
         // WPROWADZENIE DANYCH NA STRONĘ
         dailyForecast.insertAdjacentHTML('beforeend',
@@ -700,7 +691,7 @@ function updateDaily(){
                     <div class="daily-weekday">${weekday}</div>
                     <div class="daily-date">${date}</div>
                 </div>
-                <div class="daily-icon"><img src="icons/${icon}.svg" alt="" class="${iconMod}"></div>
+                <div class="daily-icon"><img src="icons/light/${icon}.svg" alt="" class="${iconMod}"></div>
                 <div class="daily-temp"   >
                     <span class="daily-temp-day">${tempDay}°</span>&nbsp/&nbsp<span class="daily-temp-night">${tempNight}°</span>
                 </div>
@@ -709,7 +700,7 @@ function updateDaily(){
                     <span class="daily-pop">${pop}%</span>
                 </div>
                 <div class="daily-wind">
-                    <img src="${dailyWindIcon}" alt="" style="transform: rotate(${90+windDeg}deg)">
+                    <img src="${dailyWindIcon}" alt="" style="transform: rotate(${135+windDeg}deg) scale(${(windSpeed+40)/80})">
                     <span class="daily-wind-speed">${windSpeed} km/h</span>
                 </div>
                 <div class="daily-pressure">
