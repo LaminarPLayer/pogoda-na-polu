@@ -20,6 +20,10 @@ self.addEventListener("install", (event) => {
       // response isn't fulfilled from the HTTP cache; i.e., it will be from
       // the network.
       await cache.add(new Request(OFFLINE_URL, { cache: "reload" }));
+      await cache.add(new Request('/logo4.svg', { cache: "reload" }));
+      await cache.add(new Request('/icons/offline-cloud.svg', { cache: "reload" }));
+      await cache.add(new Request('/icons/offline-sun.svg', { cache: "reload" }));
+      await cache.add(new Request('/icons/offline-dead-cloud.svg', { cache: "reload" }));
     })()
   );
   // Force the waiting service worker to become the active service worker.
@@ -66,6 +70,10 @@ self.addEventListener("fetch", (event) => {
 
           const cache = await caches.open(CACHE_NAME);
           const cachedResponse = await cache.match(OFFLINE_URL);
+          const cachedResponse = await cache.match('/logo4.svg');
+          const cachedResponse = await cache.match('/icons/offline-cloud.svg');
+          const cachedResponse = await cache.match('/icons/offline-sun.svg');
+          const cachedResponse = await cache.match('/icons/offline-dead-cloud.svg');
           return cachedResponse;
         }
       })()
