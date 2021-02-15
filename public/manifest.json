@@ -1,0 +1,23 @@
+{
+    "short_name": "Pogoda na Polu",
+    "name": "Pogoda na Polu — Prognoza pogody dla (Mało)Polski i nie tylko",
+    "icons": [
+        {
+            "src": "icons/PWA-icon-192.png",
+            "type": "image/png",
+            "sizes": "192x192",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "icons/PWA-icon-512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        }
+    ],
+    "start_url": "/?source=pwa",
+    "background": "#009BCF",
+    "display": "standalone",
+    "scope": "/",
+    "description": "Prognoza pogody dla (Mało)Polski i nie tylko. Wykorzystuje dane z OpenWeatherMap"
+}

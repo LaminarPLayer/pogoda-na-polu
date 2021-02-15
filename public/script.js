@@ -330,6 +330,13 @@ window.onload = function setLastLocation() {
         firstVisit();
     }
 }
+
+window.addEventListener("load", () => {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+});
+
 function firstVisit() {
     document.body.classList.add('first-visit');
 }
