@@ -16,7 +16,8 @@
         }
     ],
     "start_url": "/",
-    "background": "#009BCF",
+    "background_color": "#009BCF",
+    "theme_color": "#009BCF",
     "display": "standalone",
     "scope": "/",
     "description": "Prognoza pogody dla (Mało)Polski i nie tylko. Wykorzystuje dane z OpenWeatherMap"

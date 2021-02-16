@@ -15,6 +15,7 @@ self.addEventListener("install", (event) => {
       await cache.addAll([
             OFFLINE_URL,
             'logo4.svg',
+            'icons/favicon.png',
             'icons/offline-sun.svg',
             'icons/offline-cloud.svg',
             'icons/offline-dead-cloud.svg'
