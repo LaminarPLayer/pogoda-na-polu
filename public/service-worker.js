@@ -72,6 +72,7 @@ self.addEventListener("fetch", (event) => {
     }
     else{
         console.log('im here')
+        event.respondWith(caches.match(event.request));
     }
 
     // If our if() condition is false, then this fetch handler won't intercept the
