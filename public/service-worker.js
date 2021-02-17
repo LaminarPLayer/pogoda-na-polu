@@ -8,7 +8,7 @@ const OFFLINE_URL = "offline.html";
 const files = [
   OFFLINE_URL,
   "logo4.svg",
-  "logo4-na-dworze.svg"
+  "logo4-na-dworze.svg",
   "icons/01d.svg",
   "icons/01n.svg",
   "icons/02d.svg",
