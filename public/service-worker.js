@@ -73,8 +73,8 @@ self.addEventListener("fetch", (event) => {
     }
     else{
         event.respondWith(
-            fetch(event.request).catch(function() {
-                return caches.match(event.request, {ignoreSearch: true, ignoreVary: true, ignoreMethod: true});
+            caches.match(event.request, {ignoreSearch: true, ignoreVary: true, ignoreMethod: true}).then(function(response){
+              return response || fetch(event.request);
             })
         );
     }
