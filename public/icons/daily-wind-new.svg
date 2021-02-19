@@ -1,7 +1,3 @@
 <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="winds">
-<path id="wind3" d="M31 3H5" stroke="white" stroke-width="6" stroke-linecap="square"/>
-<path id="wind3_2" d="M31 3L31 29" stroke="white" stroke-width="6" stroke-linecap="square"/>
-<path id="wind3_3" d="M29 5L5 29" stroke="white" stroke-width="6" stroke-linecap="square"/>
-</g>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2 1.90735e-06H34V32H28V10.2426L5 33.2426L0.757355 29L23.7574 6H2V1.90735e-06Z" fill="white"/>
 </svg>

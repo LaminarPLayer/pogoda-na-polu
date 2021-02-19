@@ -584,13 +584,13 @@ function updateHourly(){
         const timeDay = dayNames[day];
 
         // WYBÓR KROPLI
-        let droplet = `<img src="icons/daily-droplet-3.svg" width=".90625rem" alt="" draggable="false">`;
+        let droplet = `<img src="icons/daily-droplet-3.svg" alt="" draggable="false">`;
         if(pop===0){
-            droplet = `<img src="icons/daily-droplet-0.svg" width=".4375rem" alt="" draggable="false">`;
+            droplet = `<img src="icons/daily-droplet-0.svg" alt="" draggable="false">`;
         } else if(pop < 33){
-            droplet = `<img src="icons/daily-droplet-1.svg" width=".4375rem" alt="" draggable="false">`;
+            droplet = `<img src="icons/daily-droplet-1.svg" alt="" draggable="false">`;
         } else if(pop < 67){
-            droplet = `<img src="icons/daily-droplet-2.svg" width=".640625rem" alt="" draggable="false">`;
+            droplet = `<img src="icons/daily-droplet-2.svg" alt="" draggable="false">`;
         }
 
         // TRANSFORMACJA DESZCZU
@@ -662,13 +662,13 @@ function updateDaily(){
         let dailyWindIcon;
         
         // WYBÓR KROPLI
-        let droplet = `<img src="icons/daily-droplet-3.svg" width=".90625rem" alt="" >`;
+        let droplet = `<img src="icons/daily-droplet-3.svg" alt="" >`;
         if(pop===0){
-            droplet = `<img src="icons/daily-droplet-0.svg" width=".4375rem" alt="" >`;
+            droplet = `<img src="icons/daily-droplet-0.svg" alt="" >`;
         } else if(pop < 33){
-            droplet = `<img src="icons/daily-droplet-1.svg" width=".4375rem" alt="" >`;
+            droplet = `<img src="icons/daily-droplet-1.svg" alt="" >`;
         } else if(pop < 67){
-            droplet = `<img src="icons/daily-droplet-2.svg" width=".640625rem" alt="" >`;
+            droplet = `<img src="icons/daily-droplet-2.svg" alt="" >`;
         }
 
         // TRANSFORMACJA DESZCZU

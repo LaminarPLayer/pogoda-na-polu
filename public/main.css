@@ -1428,6 +1428,13 @@ footer p {
     width: 100%;
     height: 100%;
     overflow-y: scroll;
+    display: unset;
+  }
+  #forecast h2 {
+    width: 100%;
+  }
+  #forecast #forecast-container {
+    display: auto;
   }
   footer {
     -ms-grid-row: 3;

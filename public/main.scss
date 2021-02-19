@@ -1186,6 +1186,15 @@ footer{
         width: 100%;
         height: 100%;
         overflow-y: scroll;
+        display: unset;
+
+        h2{
+            width: 100%;
+        }
+
+        #forecast-container{
+            display: auto;
+        }
     }
     footer{
         grid-area: footer;

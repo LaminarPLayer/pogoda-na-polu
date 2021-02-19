@@ -12,16 +12,16 @@
     }
 
     @keyframes twinkle{
-        0%  {opacity: .85}
-        10% {opacity: .85}
+        0%  {opacity: .65}
+        10% {opacity: .65}
         11% {opacity: 1}
         25% {opacity: 1}
-        26% {opacity: .85}
-        80% {opacity: .85}
+        26% {opacity: .65}
+        80% {opacity: .65}
         81% {opacity: 1}
         90% {opacity: 1}
-        91% {opacity: .85}
-        100%{opacity: .85}
+        91% {opacity: .65}
+        100%{opacity: .65}
     }
 
     #cloud{
