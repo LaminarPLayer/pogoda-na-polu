@@ -1,8 +1,8 @@
 <svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
 
 <style>
-    #cloud1{
-        animation: move1 5s ease-in-out 2.5s infinite alternate;
+    #cloud1,#cloud1Sh{
+        animation: move1 5s ease-in-out 1.5s infinite alternate;
     }
     #cloud2{
         animation: move2 5s ease-in-out infinite alternate;
@@ -28,7 +28,10 @@
 
 <g id="04d" clip-path="url(#clip0)">
 <path id="cloud2" fill-rule="evenodd" clip-rule="evenodd" d="M43 173C23.67 173 8 157.33 8 138C8 118.67 23.67 103 43 103C43.1283 103 43.2563 103.001 43.3843 103.002C46.8654 71.5014 73.5714 47 106 47C129.933 47 150.748 60.3449 161.412 79.9996C167.925 76.798 175.253 75 183 75C210.062 75 232 96.938 232 124C232 151.062 210.062 173 183 173H106H43Z" fill="#999999"/>
-<g id="cloud1" filter="url(#filter0_d)">
+<g id="cloud1Sh" filter="url(#filter0_d)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M59 209C39.67 209 24 193.33 24 174C24 154.67 39.67 139 59 139C59.1283 139 59.2563 139.001 59.3843 139.002C62.8654 107.501 89.5714 83 122 83C145.933 83 166.748 96.3449 177.412 116C183.925 112.798 191.253 111 199 111C226.062 111 248 132.938 248 160C248 187.062 226.062 209 199 209H122H59Z" fill="#CCCCCC01"/>
+</g>
+<g id="cloud1">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M59 209C39.67 209 24 193.33 24 174C24 154.67 39.67 139 59 139C59.1283 139 59.2563 139.001 59.3843 139.002C62.8654 107.501 89.5714 83 122 83C145.933 83 166.748 96.3449 177.412 116C183.925 112.798 191.253 111 199 111C226.062 111 248 132.938 248 160C248 187.062 226.062 209 199 209H122H59Z" fill="#CCCCCC"/>
 </g>
 </g>

@@ -2,7 +2,7 @@
 
 <style>
     #cloud{
-        animation: move 7.5s ease-in-out infinite alternate;
+        animation: move 5s ease-in-out infinite alternate;
     }
 
     @keyframes move{
