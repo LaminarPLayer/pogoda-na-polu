@@ -1,7 +1,7 @@
 <svg width="176" height="60" viewBox="0 0 176 60" fill="none" xmlns="http://www.w3.org/2000/svg">
 
 <style>
-    svg{background: #000b}
+    svg{background: #0004}
     
     #suns{
         transform-origin: 50% bottom;
