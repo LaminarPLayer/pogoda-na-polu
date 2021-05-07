@@ -1,0 +1,50 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<style>
+    svg{background: #000b}
+    
+    #arrows{
+        animation: press 5s ease-out normal infinite both;
+    }
+
+    @keyframes press{
+        0%{
+            opacity:0;
+            transform: translateY(-.75rem);
+        }
+        2%{
+            opacity:0;
+            transform: translateY(-.75rem);
+        }
+        85%{
+            opacity:1;
+            transform: translateY(0);
+        }
+        100%{
+            opacity:0;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+<g id="Frame 1">
+<rect id="Rectangle 1" x="12" y="57" width="104" height="4" fill="white" fill-opacity="0.8"/>
+<g id="arrows">
+<g id="Group 1">
+<rect id="Rectangle 2" x="64" y="53" width="4" height="16" transform="rotate(-135 64 53)" fill="white"/>
+<rect id="Rectangle 3" x="66.8284" y="50.1716" width="4" height="16" transform="rotate(135 66.8284 50.1716)" fill="white"/>
+<rect id="Rectangle 4" x="66" y="51" width="4" height="32" transform="rotate(-180 66 51)" fill="white"/>
+</g>
+<g id="Group 2">
+<rect id="Rectangle 2_2" x="34" y="53" width="4" height="16" transform="rotate(-135 34 53)" fill="white"/>
+<rect id="Rectangle 3_2" x="36.8284" y="50.1716" width="4" height="16" transform="rotate(135 36.8284 50.1716)" fill="white"/>
+<rect id="Rectangle 4_2" x="36" y="51" width="4" height="32" transform="rotate(-180 36 51)" fill="white"/>
+</g>
+<g id="Group 3">
+<rect id="Rectangle 2_3" x="94" y="53" width="4" height="16" transform="rotate(-135 94 53)" fill="white"/>
+<rect id="Rectangle 3_3" x="96.8284" y="50.1716" width="4" height="16" transform="rotate(135 96.8284 50.1716)" fill="white"/>
+<rect id="Rectangle 4_3" x="96" y="51" width="4" height="32" transform="rotate(-180 96 51)" fill="white"/>
+</g>
+</g>
+</g>
+</svg>

@@ -1,0 +1,39 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<style>
+    svg{background: #000b}
+    
+    #star1{
+        animation: twinkle 2s linear infinite normal;
+    }
+    #star2{
+        animation: twinkle 1.854s linear .5s infinite normal;
+    }
+    #star3{
+        animation: twinkle 2.312s linear .123s infinite normal;
+    }
+
+    @keyframes twinkle{
+        0%  {opacity: .65}
+        10% {opacity: .65}
+        11% {opacity: 1}
+        25% {opacity: 1}
+        26% {opacity: .65}
+        80% {opacity: .65}
+        81% {opacity: 1}
+        90% {opacity: 1}
+        91% {opacity: .65}
+        100%{opacity: .65}
+    }
+</style>
+
+<g id="01n">
+<g id="moon">
+<circle id="Ellipse 6" cx="128" cy="128" r="96" transform="rotate(-15 128 128)" fill="black" fill-opacity="0.33"/>
+<path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M127.118 31.9808C89.882 52.9912 70.058 97.2154 81.6356 140.423C93.2131 183.631 132.493 212.018 175.246 211.596C168.348 215.488 160.851 218.584 152.847 220.729C101.634 234.451 48.9935 204.059 35.2711 152.847C21.5487 101.634 51.9406 48.9935 103.153 35.2711C111.158 33.1262 119.198 32.0591 127.118 31.9808Z" fill="#E6E6E6"/>
+</g>
+<path id="star1" d="M226 24L231.402 38.5982L246 44L231.402 49.4018L226 64L220.598 49.4018L206 44L220.598 38.5982L226 24Z" fill="white"/>
+<path id="star2" d="M184 5L188.321 16.6785L200 21L188.321 25.3215L184 37L179.679 25.3215L168 21L179.679 16.6785L184 5Z" fill="white"/>
+<path id="star3" d="M238 75L241.241 83.7589L250 87L241.241 90.2411L238 99L234.759 90.2411L226 87L234.759 83.7589L238 75Z" fill="white"/>
+</g>
+</svg>

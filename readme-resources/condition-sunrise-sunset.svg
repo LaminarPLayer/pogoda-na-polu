@@ -1,0 +1,29 @@
+<svg width="176" height="60" viewBox="0 0 176 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<style>
+    svg{background: #000b}
+    
+    #suns{
+        transform-origin: 50% bottom;
+        animation: sun 5s cubic-bezier(.33,.1,.67,.9) reverse infinite;
+    }
+
+    @keyframes sun{
+        from{transform: rotate(0deg);}
+        from{transform: rotate(180deg);}
+    }
+</style>
+
+<g id="Frame 8" clip-path="url(#clip0)">
+<g id="suns">
+<circle id="Ellipse 6" cx="42" cy="60" r="14" fill="#E1B000"/>
+<circle id="Ellipse 7" cx="134" cy="60" r="14" fill="#E1B000"/>
+</g>
+<rect id="Rectangle 1" y="56" width="176" height="4" fill="white" fill-opacity="0.8"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="176" height="60" fill="white"/>
+</clipPath>
+</defs>
+</svg>
