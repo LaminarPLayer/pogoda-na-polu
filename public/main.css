@@ -812,6 +812,8 @@ img.small {
 #forecast #forecast-container .hourly::-webkit-scrollbar {
   height: .0625rem;
   background: transparent;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 #forecast #forecast-container .hourly::-webkit-scrollbar-thumb {
@@ -950,6 +952,8 @@ img.small {
 #forecast #forecast-container .daily::-webkit-scrollbar {
   height: .0625rem;
   background: transparent;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 #forecast #forecast-container .daily::-webkit-scrollbar-thumb {

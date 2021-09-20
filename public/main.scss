@@ -12,6 +12,8 @@
     &::-webkit-scrollbar{
         height: .0625rem;
         background: transparent;
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
     }
     &::-webkit-scrollbar-track{
         // background: linear-gradient(to top, transparent 43.75%, rgba(255, 255, 255, 0.05) 43.75% 56.25%, transparent 56.25%);
