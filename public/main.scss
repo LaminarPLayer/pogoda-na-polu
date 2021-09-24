@@ -214,7 +214,7 @@ header{
     box-shadow: 0 .25rem .25rem 0 rgba(0, 0, 0, 0.25);
     // overflow: hidden;
 
-    @include backblur();
+    // @include backblur();
 
     #logo{
         height: 3rem;
@@ -303,7 +303,7 @@ img.small{
 
         box-shadow: 0 .25rem .25rem 0 rgba(0, 0, 0, 0.25);
         
-        @include backblur();
+        // @include backblur();
 
         #location{
             margin:0;
@@ -362,7 +362,7 @@ img.small{
             padding: .5rem;
             font-size: .875rem;
             
-            @include backblur();
+            // @include backblur();
 
             .feels_like{
                 font-weight: 700;
@@ -375,7 +375,7 @@ img.small{
             background: #fff1;
             margin:.25rem;
 
-            @include backblur();
+            // @include backblur();
 
             position: relative;
             .icon-name{
@@ -938,7 +938,7 @@ footer{
     color: #fff8;
     // background: linear-gradient(to top, #0006, #ffffff08);
     background: #fff1;
-    @include backblur();
+    // @include backblur();
     box-shadow: 0 -.25rem .25rem rgba(0, 0, 0, .25);
     
     p{

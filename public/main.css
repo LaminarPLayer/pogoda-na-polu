@@ -208,8 +208,6 @@ header {
   padding: .5rem 1.25rem;
   -webkit-box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.25);
           box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.25);
-  -webkit-backdrop-filter: blur(0.5rem);
-          backdrop-filter: blur(0.5rem);
 }
 
 header #logo {
@@ -330,8 +328,6 @@ img.small {
   border-radius: 0 0 1rem 1rem;
   -webkit-box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.25);
           box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.25);
-  -webkit-backdrop-filter: blur(0.5rem);
-          backdrop-filter: blur(0.5rem);
 }
 
 #current #location-header #location {
@@ -412,8 +408,6 @@ img.small {
   margin: .25rem;
   padding: .5rem;
   font-size: .875rem;
-  -webkit-backdrop-filter: blur(0.5rem);
-          backdrop-filter: blur(0.5rem);
 }
 
 #current .details .description .feels_like, #current .details .feels_like-icon .feels_like {
@@ -426,8 +420,6 @@ img.small {
   border-radius: .5rem;
   background: #fff1;
   margin: .25rem;
-  -webkit-backdrop-filter: blur(0.5rem);
-          backdrop-filter: blur(0.5rem);
   position: relative;
 }
 
@@ -1134,8 +1126,6 @@ footer {
           justify-content: center;
   color: #fff8;
   background: #fff1;
-  -webkit-backdrop-filter: blur(0.5rem);
-          backdrop-filter: blur(0.5rem);
   -webkit-box-shadow: 0 -0.25rem 0.25rem rgba(0, 0, 0, 0.25);
           box-shadow: 0 -0.25rem 0.25rem rgba(0, 0, 0, 0.25);
 }
