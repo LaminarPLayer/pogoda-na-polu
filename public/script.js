@@ -497,6 +497,7 @@ function updateCurrent(){
         "50n": "#0f1011"
     }`);
     document.querySelector('meta[name="theme-color"]').setAttribute("content", colorCodes[wc.weather[0].icon]);
+    document.querySelector('footer').style.background = colorCodes[wc.weather[0].icon];
 }
 
 function updateMinutely(){
