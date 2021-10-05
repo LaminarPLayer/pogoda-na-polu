@@ -933,6 +933,7 @@ footer{
     text-align: center;
     height: var(--footer-height);
     display: flex;
+    z-index: 1;
     flex-direction: column;
     justify-content: center;
     color: #fff8;
